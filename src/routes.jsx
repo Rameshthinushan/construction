@@ -1,12 +1,14 @@
 import { Routes, Route } from "react-router";
 import Login from "./pages/auth/login";
-import Layout from "./pages/technical-officer/layout";
+import Layout from "./pages/layout";
+import DashboardNew from "./pages/dashboardSanja";
 
 const AppRoutes = () => {
   return (
     <Routes>
       <Route path="/login" element={<Login />} />
-      <Route path="/to" element={<Layout/>} />
+      <Route path="/" element={<Layout/>} />
+      <Route path="/new" element={<DashboardNew/>} />
     </Routes>
   );
 };
