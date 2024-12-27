@@ -6,9 +6,9 @@
   --site-btn-background: #1A2D42;
 }
 
-body {
+/* body {
   background-color: var(--site-nav-font) !important;
-}
+} */
 
 .nab-bg {
   background: var(--site-nav-bacground);
