@@ -33,7 +33,7 @@ const NavMobile = () => {
       <div className="col nab-bg pt-2 pb-2">
         <div className="row">
           <div className="col">
-            <div class="d-flex align-items-center">
+            <div className="d-flex align-items-center">
               <div className="me-2">
                 <span className='nav-text-name'>RT</span>
               </div>

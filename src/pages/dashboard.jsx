@@ -15,14 +15,13 @@ const DashBoard = () => {
   return (
     <div className="row">
       <div className="col">
-
         <div className="row">
           <div className="col text-end mt-3 mb-3">
-            <button class="btn btn-sm site-btn me-2">
+            <button className="btn btn-sm site-btn me-2">
               <i className="bi bi-plus-circle-fill me-2"></i>
               Create New Task
             </button>
-            <button class="btn btn-sm btn-secondary">
+            <button className="btn btn-sm btn-secondary">
               <i className="bi bi-funnel-fill me-2"></i>
               Filter
             </button>
