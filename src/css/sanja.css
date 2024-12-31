@@ -1,0 +1,112 @@
+*{
+  font-family:'Times New Roman', Times, serif;
+}
+
+
+.image-container{
+  min-height: 100vh !important;
+}
+
+.prime-color{
+  background-color: #dbdbdba1;
+}
+
+.card-color{
+  background-color: #fcf9f4;
+}
+
+.dashboard-color{
+  background-color: #fbf8f88c !important;
+}
+
+input.input-color{
+  background-color: #e5e3e38c !important;
+}
+select.input-color{
+  background-color: #e5e3e38c !important;
+}
+
+
+.ul-none{
+  list-style-type: none;
+}
+
+.custom-card-spacing {
+  margin-right: 9px !important; 
+}
+
+.revenue-color{
+  background-color:#fed880;
+}
+.icons-color{
+  color:rgb(255 0 0) !important
+}
+.expence-color{
+  background-color: #6f6ec3;
+}
+
+.account-receive-color{
+  background-color:#94cedb
+}
+.payable{
+  background-color: #c79ab4;
+}
+.missing-images{
+  background-color:#fcdfcc; 
+}
+.fob-cost{
+  background-color:#d6fad2;
+}
+
+.po-items{
+  background-color:#a77adc;
+}
+.booked{
+  background-color:#ffefe8;
+}
+
+.bg-color{
+  background-color:lightgray;
+}
+
+.prime-color {
+  background-color: #d6e4f0;
+}
+
+.active{
+  background-color: #ecf1f6;
+  padding: 10px;
+  border-radius: 8px;
+  color: #0075ffab;
+  width: 190px;
+}
+
+.avatar {
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.icon-circle{
+  width:39px !important;
+}
+
+.nav-active{
+  background-color: #ecf1f6;
+  padding: 8px;
+  border-radius: 8px;
+  color: #0075ffab;
+  width: 48px;
+  margin-bottom: 10px;
+  margin-left: 22px !important;
+  margin-top: 12px !important;
+}
+
+.logo {
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  background-color: #6e6e72;
+}
