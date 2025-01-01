@@ -65,7 +65,6 @@ const AddExpense = () => {
           <NavMobile />
         </div>
       </div>
-
       <form className="g-3 needs-validation mt-3 d-lg-none" onSubmit={handleSubmit}>
         <div className="row">
           <div className="col mb-2 text-center">

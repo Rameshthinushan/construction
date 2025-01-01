@@ -10,6 +10,10 @@
   background-color: var(--site-nav-font) !important;
 } */
 
+.unset {
+  all: unset;
+}
+
 .nab-bg {
   background: var(--site-nav-bacground);
   color: var(--site-nav-font);
