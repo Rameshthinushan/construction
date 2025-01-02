@@ -26,7 +26,7 @@ const NavMobile = ({to}) => {
               </div>
               <div className="small">
                 <div className="fw-medium">Thinushan</div>
-                <div className="small">thinushan@gmail.com</div>
+                <div className="small">thinu@gmail.com</div>
               </div>
             </div>
           </div>
