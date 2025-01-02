@@ -9,10 +9,18 @@ import DashBoard from './dashboard';
 import AddShift from './add_shift';
 import AddSiteInventory from './add_site_inventory';
 import Task from './task';
+import AddExpense from './add_expense';
+import AddStaff from './add_staff';
+import CookingSupplies from './cooking_supplies';
+import AddDailyLog from './add_daily_log';
 
 const components = {
   dashboard: <DashBoard/>,
   task: <Task/>,
+  expanse: <AddExpense/>,
+  staff: <AddStaff/>,
+  suppliers: <CookingSupplies/>,
+  'daily-log': <AddDailyLog/>,
   'employee-shift': <AddShift/>,
   'site-inventory': <AddSiteInventory/>
 }

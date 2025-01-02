@@ -43,7 +43,27 @@ const DashBoardMobile = () => {
     to: 'task',
     icon: 'bi-list-check',
     text: 'Task',
-    endIcon: 'bi-chevron-right'
+    endIcon: 'bi-chevron-right', 
+  }, {
+    to: 'expanse',
+    icon: 'bi-list-check',
+    text: 'Expanse',
+    endIcon: 'bi-chevron-right', 
+  },  {
+    to: 'staff',
+    icon: 'bi-list-check',
+    text: 'Staff',
+    endIcon: 'bi-chevron-right', 
+  }, {
+    to: 'suppliers',
+    icon: 'bi-list-check',
+    text: 'Cooking Suppliers',
+    endIcon: 'bi-chevron-right', 
+  }, {
+    to: 'daily-log',
+    icon: 'bi-list-check',
+    text: 'Daily Log',
+    endIcon: 'bi-chevron-right', 
   }] 
 
   
@@ -119,7 +139,7 @@ const DashBoardMobile = () => {
           </div>
         </div> */}
         
-        <div className="row mb-2">
+        {/* <div className="row mb-2">
           <div className="col">
             <div className="bg-body-secondary border p-2 rounded-3">
               <div className="d-flex justify-content-between align-items-center">
@@ -137,9 +157,9 @@ const DashBoardMobile = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
-        <div className="row mb-2">
+        {/* <div className="row mb-2">
           <div className="col">
             <div className="bg-body-secondary border p-2 rounded-3">
               <div className="d-flex justify-content-between align-items-center">
@@ -157,8 +177,8 @@ const DashBoardMobile = () => {
               </div>
             </div>
           </div>
-        </div>
-        <div className="row mb-2">
+        </div> */}
+        {/* <div className="row mb-2">
           <div className="col">
             <div className="bg-body-secondary border p-2 rounded-3">
               <div className="d-flex justify-content-between align-items-center">
@@ -176,7 +196,7 @@ const DashBoardMobile = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div className="border-bottom pt-2"></div>
         
