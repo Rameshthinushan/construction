@@ -14,7 +14,7 @@ const AppRoutes = () => {
   return (
     <Routes>
       <Route path="/login" element={<Login />} />
-      <Route path="/" element={<Layout/>} />
+      <Route path="/:domin?" element={<Layout/>} />
       <Route path="/new" element={<DashboardNew/>} />
       <Route path="/add-staff" element={<AddStaff/>} />
       <Route path="/add-shift" element={<AddShift/>} />

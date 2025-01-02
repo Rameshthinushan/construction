@@ -1,209 +1,38 @@
 import Dropdown from 'react-bootstrap/Dropdown';
-import DashBoard from "./dashboard"
+// import DashBoard from "./dashboard"
 import Staff from './staff';
 
+import { useParams } from 'react-router';
+import { useState, useEffect } from 'react';
+
+import DashBoard from './dashboard';
+import AddShift from './add_shift';
+import AddSiteInventory from './add_site_inventory';
+import Task from './task';
+
+const components = {
+  dashboard: <DashBoard/>,
+  task: <Task/>,
+  'employee-shift': <AddShift/>,
+  'site-inventory': <AddSiteInventory/>
+}
+
 const Layout = () => {
+  const {domin} = useParams()
+  const [currentComponents, setCurrentComponents] = useState()
+  
+  useEffect(() => {
+    const component = (typeof domin === 'undefined' || domin === '') ? 'dashboard' : domin
+    setCurrentComponents(component)
+  }, [domin]);
+  console.log(currentComponents)
   return (
     <div className="container-fluid">
       <div className="row">
-        <div className="col d-lg-none">
-          {/* <NavMobile/> */}
-        </div>
-      </div>
-
-      <div className="row d-lg-flex d-none">
         <div className="col">
-          working
+          {components[currentComponents]}
         </div>
       </div>
-
-      <div className="row d-lg-none">
-        <div className="col">
-          <div className="row mb-4 mt-3">
-            <div className="col">
-              <div className="border rounded-3 p-2">
-                <div className="d-flex align-items-center">
-                  <div className="me-2">
-                    <span className='nab-bg nav-text-name'>RT</span>
-                  </div>
-                  <div className="small w-auto">
-                    <div className="fw-medium">Thinushan <i className="bi bi-patch-check-fill text-primary"></i></div>
-                    <div className="small text-secondary">thin@gmail.com</div>
-                  </div>
-                  <div className="w-100 text-end">
-                    <i className="bi bi-chevron-right"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="row mb-2">
-            <div className="col">
-              <div className="bg-body-secondary border p-2 rounded-3">
-                <div className="d-flex justify-content-between align-items-center">
-                  <div>
-                    <div className="d-flex align-items-center">
-                      <div className="me-2">
-                        <i className="bi bi-person-circle fs-3"></i>
-                      </div>
-                      <div className="small fw-medium">Employee Shift</div>
-                    </div>
-                  </div>
-                  <div>
-                    <i className="bi bi-chevron-right"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="row mb-2">
-            <div className="col">
-              <div className="bg-body-secondary border p-2 rounded-3">
-                <div className="d-flex justify-content-between align-items-center">
-                  <div>
-                    <div className="d-flex align-items-center">
-                      <div className="me-2">
-                        <i className="bi bi-box-seam-fill fs-3"></i>
-                      </div>
-                      <div className="small fw-medium">Site Inventory</div>
-                    </div>
-                  </div>
-                  <div>
-                    <i className="bi bi-chevron-right"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div className="row mb-2">
-            <div className="col">
-              <div className="bg-body-secondary border p-2 rounded-3">
-                <div className="d-flex justify-content-between align-items-center">
-                  <div>
-                    <div className="d-flex align-items-center">
-                      <div className="me-2">
-                        <i className="bi bi-people fs-3"></i>
-                      </div>
-                      <div className="small fw-medium">Staffs Management</div>
-                    </div>
-                  </div>
-                  <div>
-                    <i className="bi bi-chevron-right"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="row mb-2">
-            <div className="col">
-              <div className="bg-body-secondary border p-2 rounded-3">
-                <div className="d-flex justify-content-between align-items-center">
-                  <div>
-                    <div className="d-flex align-items-center">
-                      <div className="me-2">
-                        <i className="bi bi-person-circle fs-3"></i>
-                      </div>
-                      <div className="small fw-medium">Add Employee Shift</div>
-                    </div>
-                  </div>
-                  <div>
-                    <i className="bi bi-chevron-right"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="row mb-2">
-            <div className="col">
-              <div className="bg-body-secondary border p-2 rounded-3">
-                <div className="d-flex justify-content-between align-items-center">
-                  <div>
-                    <div className="d-flex align-items-center">
-                      <div className="me-2">
-                        <i className="bi bi-person-circle fs-3"></i>
-                      </div>
-                      <div className="small fw-medium">Add Employee Shift</div>
-                    </div>
-                  </div>
-                  <div>
-                    <i className="bi bi-chevron-right"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="border-bottom pt-2"></div>
-          <div className="row mt-3 mb-2">
-            <div className="col small fw-medium text-secondary">
-              Settings & Preferances
-            </div>
-          </div>
-          <div className="row mb-2">
-            <div className="col">
-              <div className="bg-body-secondary border p-2 rounded-3">
-                <div className="d-flex justify-content-between align-items-center">
-                  <div>
-                    <div className="d-flex align-items-center">
-                      <div className="me-2">
-                        <i className="bi bi-gear-fill fs-3"></i>
-                      </div>
-                      <div className="small fw-medium">Settings</div>
-                    </div>
-                  </div>
-                  <div>
-                    <i className="bi bi-chevron-right"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="row mb-2">
-            <div className="col">
-              <div className="bg-body-secondary border p-2 rounded-3">
-                <div className="d-flex justify-content-between align-items-center">
-                  <div>
-                    <div className="d-flex align-items-center">
-                      <div className="me-2">
-                        <i className="bi bi-bell-fill fs-3"></i>
-                      </div>
-                      <div className="small fw-medium">Notification</div>
-                    </div>
-                  </div>
-                  <div>
-                    <i className="bi bi-chevron-right"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="border-bottom pt-2"></div>
-          <div className="row mt-3 mb-2">
-            <div className="col small fw-medium text-secondary">
-              Support
-            </div>
-          </div>
-
-          <div className="row mb-2">
-            <div className="col">
-              <div className="p-2">
-                <div className="d-flex align-items-center text-danger">
-                  <div className="me-2">
-                    <i className="bi bi-box-arrow-in-left fs-3"></i>
-                  </div>
-                  <div className="small fw-medium">Logout</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* <Staff/> */}
-        </div>
-      </div>
-
     </div>
   )
 }
