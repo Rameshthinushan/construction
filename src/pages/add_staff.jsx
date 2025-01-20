@@ -69,10 +69,10 @@ const AddStaff = () => {
   };
 
   return (
-    <div className="container-fluid">
+    <div className="">
       <div className="row">
         <div className="col d-lg-none">
-          <NavMobile />
+          <NavMobile to="/"/>
         </div>
       </div>
 

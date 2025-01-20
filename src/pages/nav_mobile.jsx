@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router';
 
-const NavMobile = () => {
+const NavMobile = ({to}) => {
   const [menuVisible, setMenuVisible] = useState(false);
 
   const toggleMenu = () => {
@@ -14,11 +15,18 @@ const NavMobile = () => {
           <div className="col">
             <div className="d-flex align-items-center">
               <div className="me-2">
+                <Link to={to}>
+                  <button className="mobile-nav-btn">
+                    <i className="bi bi-chevron-left fs-4"></i>
+                  </button>
+                </Link>
+              </div>
+              <div className="me-2">
                 <span className='nav-text-name'>RT</span>
               </div>
               <div className="small">
                 <div className="fw-medium">Thinushan</div>
-                <div className="small">thinushan@gmail.com</div>
+                <div className="small">thinu@gmail.com</div>
               </div>
             </div>
           </div>
