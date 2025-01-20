@@ -93,7 +93,23 @@ const Layout = () => {
                   </div>
                 </div>
                 <div className="col-lg-4">
-                  <div className="site-bg-compo m-4 p-3">dvdf</div>
+                  <div className="m-4 p-3">
+                    <div className="row">
+                      <div className="col"></div>
+                      <div className="col">
+                        
+                        <div>
+                          <div>
+                            <div></div>
+                            <div></div>
+                          </div>
+                          <div></div>
+                        </div>
+
+                      </div>
+                    </div>
+
+                  </div>
                 </div>
               </div>
             </div>
