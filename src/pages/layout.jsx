@@ -13,7 +13,91 @@ const Layout = () => {
 
       <div className="row d-lg-flex d-none">
         <div className="col">
-          working
+          <div className="row dt-dashboard-container">
+            <div className="col-1 site-bg-compo text-center">
+              <div className="mb-4"><img src="assets/site-images/newlog.png" alt="" height="100"/></div>
+              <div>
+                <ul className="list-unstyled nav-font-color">
+                  <li className="mb-4">
+                    <span className="active nav-list-item">
+                      <i className="bi bi-grid-fill fs-5"></i>
+                    </span>
+                  </li>
+                  <li className="mb-4">
+                    <span className="nav-list-item">
+                      <i className="bi bi-house-fill fs-5"></i>
+                    </span>
+                  </li>
+                  <li className="mb-4">
+                    <span className="nav-list-item">
+                      <i className="bi bi-house-fill fs-5"></i>
+                    </span>
+                  </li>
+                  <li className="mb-4">
+                    <span className="nav-list-item">
+                      <i className="bi bi-house-fill fs-5"></i>
+                    </span>
+                  </li>
+                  <li className="mb-4">
+                    <span className="nav-list-item">
+                      <i className="bi bi-house-fill fs-5"></i>
+                    </span>
+                  </li>
+                  <li className="mb-4">
+                    <span className="nav-list-item">
+                      <i className="bi bi-house-fill fs-5"></i>
+                    </span>
+                  </li>
+                  <li className="mb-4">
+                    <span className="nav-list-item">
+                      <i className="bi bi-house-fill fs-5"></i>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+              <div className="log-out">
+                <span>
+                  <i className="bi bi-box-arrow-in-right fs-4"></i>
+                </span>
+              </div>
+            </div>
+            <div className="col-11">
+              <div className="row">
+                <div className="col-lg-8">
+                  <div className="site-bg-compo m-4 p-3 rounded-2 site-border">
+                    <div className="row nav-font-color fw-medium text-center align-items-center">
+                      <div className="col">
+                        <div className="active-quick-nav p-2 quick-nav-item">Quick nav 1</div>
+                      </div>
+                      <div className="col">
+                        <div className="col">
+                          <div className="p-2 quick-nav-item">Quick nav 1</div>
+                        </div>
+                      </div>
+                      <div className="col">
+                        <div className="col">
+                          <div className="p-2 quick-nav-item">Quick nav 1</div>
+                        </div>
+                      </div>
+                      <div className="col">
+                        <div className="col">
+                          <div className="p-2 quick-nav-item">Quick nav 1</div>
+                        </div>  
+                      </div>
+                      <div className="col">
+                        <div className="col">
+                          <div className="p-2 quick-nav-item">Quick nav 1</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-lg-4">
+                  <div className="site-bg-compo m-4 p-3">dvdf</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 

@@ -73,13 +73,13 @@ select.input-color{
   background-color: #d6e4f0;
 }
 
-.active{
+/* .active{
   background-color: #ecf1f6;
   padding: 10px;
   border-radius: 8px;
   color: #0075ffab;
   width: 190px;
-}
+} */
 
 .avatar {
   vertical-align: middle;

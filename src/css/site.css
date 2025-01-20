@@ -1,14 +1,85 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
+  --site-body-color: #111111;
+  --site-body-color-compo: #161623;
+  --site-theme-font-color: #ff4655;
+  --site-theme-active-color: #44202e;
+  --site-font-color: #fbfeff;
   --site-nav-bacground: #2E4156;
   --site-nav-font: #D4D8DD;
   --site-btn-background: #1A2D42;
 }
 
-/* body {
-  background-color: var(--site-nav-font) !important;
-} */
+
+body {
+  background-color: var(--site-body-color) !important;
+  color: var(--site-font-color) !important;
+  font-family: "Roboto", serif !important;
+}
+
+.form-control {
+  background: var(--site-body-color-compo) !important;
+  color: var(--site-font-color) !important;
+}
+
+.btn-site {
+  background: var(--site-theme-font-color) !important;
+  color: var(--site-font-color) !important;
+}
+
+.dec-font-color {
+  color: var(--site-theme-font-color);
+}
+
+.site-bg-compo {
+  background-color: var(--site-body-color-compo) !important;
+}
+
+.nav-font-color {
+  color: #8b8fa0
+}
+
+.active {
+  background: #44202e;
+  padding: 12px 8px 6px 8px;
+  color: #ff4655 !important;
+  border-radius: 6px;
+}
+
+.nav-list-item:hover {
+  background: #44202e;
+  padding: 12px 8px 6px 8px;
+  color: #ff4655 !important;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 1.5s;
+}
+
+.active-quick-nav {
+  background: #2d3142;
+  border-radius: 4px;
+  color: var(--site-font-color)
+}
+
+.quick-nav-item:hover {
+  background: #2d3142;
+  border-radius: 4px;
+  color: var(--site-font-color);
+  cursor: pointer;
+  transition: background 1.5s;
+}
+
+.site-border {
+  border: 0.5px solid #26282f !important;
+}
+
+.log-out {
+  position: fixed;
+  bottom: 10px;
+  margin: 10px 30px;
+}
 
 .unset {
   all: unset;
@@ -22,6 +93,15 @@
 .site-btn {
   background-color: var(--site-btn-background) !important;
   color: var(--site-nav-font) !important;
+}
+
+::placeholder {
+  color: #838181 !important; 
+  opacity: 1; /* Firefox */
+}
+
+.dt-dashboard-container {
+  min-height: 100vh;
 }
 
 .menu-btn {
@@ -49,27 +129,6 @@
 }
 
 
-/* .login-container {
-  min-height: 100vh !important;
-  background: linear-gradient(45deg, #8d0000, #44006b, #270164, #010433);
-  background-attachment: fixed;
-  animation: backgroundanimation 4s infinite ease;
-  background-size: 500%;
-} */
-/* background-color: RGBA(33, 37, 41, var(--bs-bg-opacity, 1)) !important; */
 .login-container {
-  min-height: 100vh !important;
-  /* background: linear-gradient(45deg, #8d0000, #44006b, #270164, #010433);
-  background-attachment: fixed;
-  animation: backgroundanimation 4s infinite ease;
-  background-size: 500%; */
+  background: linear-gradient(180deg, #000000, #130F40, #000000);
 }
-
-/* @keyframes backgroundanimation {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-} */
