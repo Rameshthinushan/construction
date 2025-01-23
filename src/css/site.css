@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-  --site-body-color: #111111;
+  --site-body-color: #141427f2;
   --site-body-color-compo: #161623;
   --site-theme-font-color: #ff4655;
   --site-theme-active-color: #44202e;
@@ -11,7 +11,6 @@
   --site-nav-font: #D4D8DD;
   --site-btn-background: #1A2D42;
 }
-
 
 body {
   background-color: var(--site-body-color) !important;
@@ -75,10 +74,22 @@ body {
   border: 0.5px solid #26282f !important;
 }
 
+.site-border-bottom {
+  border-bottom: 0.5px solid #26282f !important;
+}
+
 .log-out {
   position: fixed;
   bottom: 10px;
   margin: 10px 30px;
+}
+
+.zoom {
+  transition: transform .2s; /* Animation */
+}
+
+.zoom:hover {
+  transform: scale(1.08); 
 }
 
 .unset {
