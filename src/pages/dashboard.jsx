@@ -24,7 +24,147 @@ const DashBoard = () => {
 
 const DashboardDeskTop = () => {
   return (
-    <DashboardNew/>
+    <div className="row">
+      <div className="col">
+        <div className="row dt-dashboard-container">
+          {/* side navigation panel */}
+          <div className="col-1 site-bg-compo text-center">
+            <div className="mb-4"><img src="assets/site-images/newlog.png" alt="" height="100"/></div>
+            <div>
+              <ul className="list-unstyled nav-font-color">
+                <li className="mb-4">
+                  <span className="active nav-list-item">
+                    <i className="bi bi-grid-fill fs-5"></i>
+                  </span>
+                </li>
+                <li className="mb-4">
+                  <span className="nav-list-item">
+                    <i className="bi bi-house-fill fs-5"></i>
+                  </span>
+                </li>
+                <li className="mb-4">
+                  <span className="nav-list-item">
+                    <i className="bi bi-house-fill fs-5"></i>
+                  </span>
+                </li>
+                <li className="mb-4">
+                  <span className="nav-list-item">
+                    <i className="bi bi-house-fill fs-5"></i>
+                  </span>
+                </li>
+                <li className="mb-4">
+                  <span className="nav-list-item">
+                    <i className="bi bi-house-fill fs-5"></i>
+                  </span>
+                </li>
+                <li className="mb-4">
+                  <span className="nav-list-item">
+                    <i className="bi bi-house-fill fs-5"></i>
+                  </span>
+                </li>
+                <li className="mb-4">
+                  <span className="nav-list-item">
+                    <i className="bi bi-house-fill fs-5"></i>
+                  </span>
+                </li>
+              </ul>
+            </div>
+            <div className="log-out">
+              <span>
+                <i className="bi bi-box-arrow-in-right fs-4"></i>
+              </span>
+            </div>
+          </div>
+          {/* content  panel */}
+          <div className="col-11">
+            {/* top navigation panel */}
+            <div className="row">
+              {/* quick navigation panel */}
+              <div className="col-lg-8">
+                <div className="site-bg-compo m-4 p-3 rounded-2 site-border">
+                  <div className="row nav-font-color fw-medium text-center align-items-center">
+                    <div className="col">
+                      <div className="active-quick-nav p-2 quick-nav-item">Quick nav 1</div>
+                    </div>
+                    <div className="col">
+                      <div className="col">
+                        <div className="p-2 quick-nav-item">Quick nav 1</div>
+                      </div>
+                    </div>
+                    <div className="col">
+                      <div className="col">
+                        <div className="p-2 quick-nav-item">Quick nav 1</div>
+                      </div>
+                    </div>
+                    <div className="col">
+                      <div className="col">
+                        <div className="p-2 quick-nav-item">Quick nav 1</div>
+                      </div>  
+                    </div>
+                    <div className="col">
+                      <div className="col">
+                        <div className="p-2 quick-nav-item">Quick nav 1</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {/* customer Details */}
+              <div className="col-lg-4">
+                <div className="m-4 p-3">
+                  <div className="align-items-center d-flex justify-content-end">
+                    <div className="me-4 dec-font-color"><i className="bi bi-bell fs-4"></i></div>
+                    <div className="">
+                      <div className="d-flex align-items-center">
+                        <div className="small">
+                          <div>Thinusan</div>
+                          <div className="small">Thinushan@gmail.com</div>
+                        </div>
+                        <div className="ms-4">
+                          <span className="fw-medium p-2 rounded-2 site-bg-compo site-border">RT</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <div className="row">
+              <div className="col"> 
+                {/* content */}
+                <div className="row">
+                  <div className="col">
+                    <div className="site-bg-compo m-4 p-3 rounded-2 site-border h-100"></div>
+                  </div>
+                  <div className="col">
+                    <div className="row">
+                      <div className="col">
+                        <div className="site-bg-compo m-4 p-3 rounded-2 site-border h-100"></div>
+                      </div>
+                      <div className="col">
+                        <div className="site-bg-compo m-4 p-3 rounded-2 site-border h-100"></div>
+                      </div>
+                    </div>
+                    <div className="row">
+                      <div className="col">
+                        <div className="site-bg-compo m-4 p-3 rounded-2 site-border h-100"></div>
+                      </div>
+                      <div className="col">
+                        <div className="site-bg-compo m-4 p-3 rounded-2 site-border h-100"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   ); 
 }
 
