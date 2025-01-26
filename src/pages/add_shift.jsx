@@ -73,16 +73,16 @@ const AddShift = () => {
       <div className="row">
         <div className="col text-end mt-3 mb-3">
           <button 
-            class="btn btn-sm site-btn me-2"
+            className="btn btn-sm site-btn me-2"
             onClick={handleShow}
           >
             <i className="bi bi-plus-circle-fill me-2"></i> Add Shift
           </button>
-          <button class="btn btn-sm btn-warning me-2">
+          <button className="btn btn-sm btn-warning me-2">
             <i className="bi bi-pause-fill me-2"></i>
             Bulk Stop
           </button>
-          <button class="btn btn-sm btn-danger">
+          <button className="btn btn-sm btn-danger">
             <i className="bi bi-stop-circle me-2"></i>
             Bulk End
           </button>

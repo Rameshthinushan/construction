@@ -18,12 +18,12 @@ const Staff = () => {
         <div className="row">
           <div className="col text-end mt-3 mb-3">
             <button 
-              class="btn btn-sm site-btn me-2"
+              className="btn btn-sm site-btn me-2"
               onClick={handleShow}
             >
               <i className="bi bi-plus-circle-fill me-2"></i> Create New Staff
             </button>
-            <button class="btn btn-sm btn-secondary">
+            <button className="btn btn-sm btn-secondary">
               <i className="bi bi-funnel-fill me-2"></i>
               Filter
             </button>

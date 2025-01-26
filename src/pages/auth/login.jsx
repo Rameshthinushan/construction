@@ -20,7 +20,7 @@ function Login() {
                 </div>
                 <div className="text-end mt-3 mb-3 small">Forget Your Password</div>
                 <div>
-                  <button class="btn btn-sm btn-site w-100 p-2">Submit</button>
+                  <button className="btn btn-sm btn-site w-100 p-2">Submit</button>
                 </div>
               </div>
             </div>
