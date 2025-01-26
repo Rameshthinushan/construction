@@ -1,6 +1,4 @@
-import Dropdown from 'react-bootstrap/Dropdown';
-import DashBoard from "./dashboard"
-import Staff from './staff';
+import DashBoard from "./dashboard/dashboard"
 
 const Layout = () => {
   return (

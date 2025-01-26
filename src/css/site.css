@@ -78,6 +78,10 @@ body {
   border-bottom: 0.5px solid #26282f !important;
 }
 
+.site-border-top {
+  border-top: 0.5px solid #26282f !important;
+}
+
 .log-out {
   position: fixed;
   bottom: 10px;
@@ -143,3 +147,4 @@ body {
 .login-container {
   background: linear-gradient(180deg, #000000, #130F40, #000000);
 }
+

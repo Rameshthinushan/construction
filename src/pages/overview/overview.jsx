@@ -17,7 +17,7 @@ import React from 'react'
                       <h1 className="dec-font-color">Overview Breakdown</h1>
                     </div>
                     <div>
-                      <img src="assets/site-images/rb_2148887079.png" alt="" height="140" className="zoom"/>
+                      <img src="/assets/site-images/rb_2148887079.png" alt="" height="140" className="zoom"/>
                     </div>
                   </div>
                 </div>
@@ -52,7 +52,7 @@ import React from 'react'
                         <div><h1>10</h1></div>
                       </div>
                       <div>
-                        <img src="assets/site-images/contruction.png" alt="" height="80"/>
+                        <img src="/assets/site-images/contruction.png" alt="" height="80"/>
                       </div>
                     </div>
                     <div className="text-end mt-3"><i className="bi bi-arrow-right"></i></div>
@@ -66,7 +66,7 @@ import React from 'react'
                         <div><h1>10</h1></div>
                       </div>
                       <div>
-                        <img src="assets/site-images/contruction.png" alt="" height="80"/>
+                        <img src="/assets/site-images/contruction.png" alt="" height="80"/>
                       </div>
                     </div>
                     <div className="text-end mt-3"><i className="bi bi-arrow-right"></i></div>
@@ -83,7 +83,7 @@ import React from 'react'
                         <div><h1>10</h1></div>
                       </div>
                       <div>
-                        <img src="assets/site-images/contruction.png" alt="" height="80"/>
+                        <img src="/assets/site-images/contruction.png" alt="" height="80"/>
                       </div>
                     </div>
                     <div className="text-end mt-3"><i className="bi bi-arrow-right"></i></div>
@@ -97,7 +97,7 @@ import React from 'react'
                         <div><h1>10</h1></div>
                       </div>
                       <div>
-                        <img src="assets/site-images/contruction.png" alt="" height="80"/>
+                        <img src="/assets/site-images/contruction.png" alt="" height="80"/>
                       </div>
                     </div>
                     <div className="text-end mt-3"><i className="bi bi-arrow-right"></i></div>
