@@ -1,16 +1,26 @@
 import { useState } from "react"
+import CreateUserModal from "./createUserModal";
 
 const UserList = () => {
   const [loding, setLoding] = useState(true)
+  const [modalShow, setModalShow] = useState(false);
+
+  const handleClose = () => setModalShow(false);
+  const handleShow = () => setModalShow(true);
+
   setTimeout(() => {
     setLoding(false)
   }, 3000);
+  
   return (
     <div className="row">
       <div className="col">
         <div className="row">
           <div className="col">
-            <button className="btn btn-sm btn-site">
+            <button 
+              className="btn btn-sm btn-site"
+              onClick={() => setModalShow(true)}
+            >
               <i className="bi bi-plus-circle-fill me-2"></i>Create New user
             </button>
           </div>
@@ -45,7 +55,10 @@ const UserList = () => {
             </div>
           </div>
         </div>
-
+        <CreateUserModal 
+          show={modalShow}
+          handleClose={handleClose}
+        />
       </div>
     </div>
   )

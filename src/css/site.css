@@ -18,7 +18,7 @@ body {
   font-family: "Roboto", serif !important;
 }
 
-.form-control {
+.form-control, .form-select {
   background: var(--site-body-color-compo) !important;
   color: var(--site-font-color) !important;
   border: 0.5px solid #26282f !important;
@@ -81,6 +81,10 @@ body {
 
 .site-border-top {
   border-top: 0.5px solid #26282f !important;
+}
+
+.site-dash-border {
+  border: dashed 0.5px;
 }
 
 .log-out {
@@ -149,7 +153,11 @@ body {
   background: linear-gradient(180deg, #000000, #130F40, #000000);
 }
 
-
 .w-100px {
   width: 100px;
 }
+
+.modal-content {
+  background-color: #142c46 !important; 
+}
+
