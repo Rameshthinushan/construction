@@ -21,6 +21,7 @@ body {
 .form-control {
   background: var(--site-body-color-compo) !important;
   color: var(--site-font-color) !important;
+  border: 0.5px solid #26282f !important;
 }
 
 .btn-site {
@@ -148,3 +149,7 @@ body {
   background: linear-gradient(180deg, #000000, #130F40, #000000);
 }
 
+
+.w-100px {
+  width: 100px;
+}

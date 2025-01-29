@@ -1,6 +1,6 @@
 const list = [{
   to: '/overview',
-  slug: 'overview',
+  slug: ['overview'],
   icon: 'bi-grid',
   text: 'Overview',
   tooltipText: 'Overview',
@@ -8,7 +8,7 @@ const list = [{
   show: true
 }, {
   to: '/purchase-order',
-  slug: 'purchase-order',
+  slug: ['purchase-order'],
   icon: 'bi-cart-check',
   text: 'Purchase',
   tooltipText: 'Purchase Order',
@@ -16,7 +16,7 @@ const list = [{
   show: true
 }, {
   to: '/inventory',
-  slug: 'inventory',
+  slug: ['inventory'],
   icon: 'bi-boxes',
   text: 'Invontary',
   tooltipText: 'Invontary',
@@ -24,7 +24,7 @@ const list = [{
   show: true
 }, {
   to: '/expanse',
-  slug: 'expanse',
+  slug: ['expanse'],
   icon: 'bi-piggy-bank',
   text: 'Expanse',
   tooltipText: 'Expanse',
@@ -32,7 +32,7 @@ const list = [{
   show: true
 }, {
   to: '/to-do',
-  slug: 'to-do',
+  slug: ['to-do'],
   icon: 'bi-ui-checks',
   text: 'To Do',
   tooltipText: 'Daily Activities',
@@ -40,7 +40,7 @@ const list = [{
   show: true
 }, {
   to: '/documents',
-  slug: 'documents',
+  slug: ['documents'],
   icon: 'bi-file-earmark-spreadsheet',
   text: 'Documents',
   tooltipText: 'Documents (BSR, BOQ)',
@@ -48,7 +48,7 @@ const list = [{
   show: true
 }, {
   to: '/projects',
-  slug: 'projects',
+  slug: ['projects'],
   icon: 'bi-bricks',
   text: 'projects',
   tooltipText: 'Projects and Clients',
@@ -56,7 +56,7 @@ const list = [{
   show: true
 }, {
   to: '/reports',
-  slug: 'reports',
+  slug: ['reports'],
   icon: 'bi-journal-text',
   text: 'Reports',
   tooltipText: 'Reports',
@@ -64,7 +64,7 @@ const list = [{
   show: true
 }, {
   to: '/settings',
-  slug: 'settings',
+  slug: ['settings', 'user'],
   icon: 'bi bi-gear',
   text: 'Settings',
   tooltipText: 'Settings',

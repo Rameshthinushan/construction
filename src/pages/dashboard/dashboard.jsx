@@ -3,27 +3,34 @@ import { Link, useParams } from 'react-router'
 import { OverlayTrigger, Tooltip } from 'react-bootstrap'
 import list from './listitems'
 
-import Settings from '../settings'
 import Overview from '../overview/overview'
-import {MobileDashboard} from './mobileDashboard'
+import SettingsLayouts from '../settings/settingsLayouts'
+import UserList from '../settings/user/userList'
+import MobileLayouts from './mobileLayouts'
 
 const components = {
   overview: <Overview />,
-  settings: <Settings />
+  settings: <SettingsLayouts />,
+  user: <UserList />
 }
 
 const DashBoard = () => {
+  const {domin} = useParams()
   return (
     <div className="row">
       <div className="col">
         <div className="row d-lg-flex d-none">
           <div className="col">
-            <DashboardDeskTop/>
+            <DashboardDeskTop
+              domin={domin}
+            />
           </div>
         </div>
         <div className="row d-lg-none">
           <div className="col">
-            <MobileDashboard/>
+            <MobileLayouts
+              domin={domin}
+            />
           </div>
         </div>
       </div>
@@ -31,8 +38,7 @@ const DashBoard = () => {
   )
 }
 
-const DashboardDeskTop = () => {
-  const {domin} = useParams()
+const DashboardDeskTop = ({domin}) => {
   const [relativePath , setRelativePath] = useState()
   const url = (typeof domin == 'undefined')? 'overview' : domin
  
@@ -79,7 +85,7 @@ const DashboardDeskTop = () => {
 
 const CustomerInfo = () => {
   return (
-    <div className="m-4">
+    <div className="m-4 me-0">
       <div className="align-items-center d-flex justify-content-end">
         <div className="me-4 dec-font-color"><i className="bi bi-bell fs-4"></i></div>
         <div className="">
@@ -118,7 +124,7 @@ const ListItemsDeskTop = ({url}) => {
                   }
                 >
                   <Link to={i.to} className="nav-font-color">
-                    <span className={`${(url === i.slug)? `active` : ''} nav-list-item`}>
+                    <span className={`${(i.slug?.includes(url))? `active` : ''} nav-list-item`}>
                       <i className={`bi ${i.icon} fs-5`}></i>
                     </span>
                   </Link>

@@ -1,42 +1,49 @@
 import { Link } from "react-router"
 import list from "./listitems"
 
-const MobileDashboard = () => {
+const FirstScreenView = () => {
   return (
     <div className="row">
       <div className="col">
         <UserSection/>
-        <div className="row mb-4">
-          <div className="col">
-            <div className="row">
-              <div className="col">
-                <div className="site-border-bottom pb-2 mb-3 ms-1 fw-medium">Search Items</div>
-              </div>
-            </div>
-            <div className="row">
-              {
-                list.map((l, i) => (
-                  <div className="col-4 mb-3" key={i}>
-                    <div className="site-bg-compo site-border rounded-3 p-3 text-center h-100">
-                      <Link to={l.to} className="text-decoration-none">
-                        <div className="dec-font-color mb-2">
-                          <i className={`bi ${l.icon} fs-1`}></i>
-                        </div>
-                        <div className="nav-font-color">{l.text}</div>
-                      </Link>
-                    </div>
-                  </div>
-                ))
-              }
-            </div>
-          </div>
-        </div>
+        <Items />
         <Notification/>
         <Logout/>
       </div>
     </div>
   )
 }
+
+const Items = () => {
+  return (
+    <div className="row mb-4">
+      <div className="col">
+        <div className="row">
+          <div className="col">
+            <div className="site-border-bottom pb-2 mb-3 ms-1 fw-medium">Search Items</div>
+          </div>
+        </div>
+        <div className="row">
+          {
+            list.map((l, i) => (
+              <div className="col-4 mb-3" key={i}>
+                <div className="site-bg-compo site-border rounded-3 p-3 text-center h-100">
+                  <Link to={l.to} className="text-decoration-none">
+                    <div className="dec-font-color mb-2">
+                      <i className={`bi ${l.icon} fs-1`}></i>
+                    </div>
+                    <div className="nav-font-color">{l.text}</div>
+                  </Link>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  )
+} 
+
 const Notification = () => {
   return (
     <div className="row mb-4">
@@ -112,4 +119,4 @@ const UserSection = () => {
   )
 } 
 
-export {MobileDashboard}
+export default FirstScreenView
