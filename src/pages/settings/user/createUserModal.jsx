@@ -1,6 +1,11 @@
 import {Modal} from 'react-bootstrap';
 
 const CreateUserModal = ({show, handleClose}) => {
+  const createNewUser = (e) => {
+    e.preventDefault();
+    console.log('working')
+  }
+
   return (
     <Modal 
       show={show} 
@@ -20,7 +25,7 @@ const CreateUserModal = ({show, handleClose}) => {
       <Modal.Body>
         <div className="row">
           <div className="col">
-            <form action="">
+            <form action="" onSubmit={createNewUser}>
               <div className="row mb-3">
                 <div className="col-lg-2 mb-lg-0 mb-3">
                   <div className="align-items-center site-dash-border d-flex h-100 justify-content-around rounded-2">
@@ -132,14 +137,7 @@ const CreateUserModal = ({show, handleClose}) => {
                 <div className="col">
                   <div className="row">
                     <div className="col">
-                      <div className='border-bottom border-secondary mb-2 pb-2'> 
-                        <div className="form-check">
-                          <input className="form-check-input form-check" type="checkbox" value="" id="defaultCheck1" />
-                          <label className="form-check-label mt-1 ms-2" for="defaultCheck1">
-                            Set user Permisions
-                          </label>
-                        </div>
-                      </div>
+                      <div className='border-bottom border-secondary mb-2 pb-2'> Set user Permisions </div>
                     </div>
                   </div>
                   <div className="row small">
