@@ -1,10 +1,9 @@
-import {Modal} from 'react-bootstrap';
-import { useState, useEffect } from 'react';
+import {Modal} from 'react-bootstrap'
+import { useState } from 'react'
+import { useSelector } from 'react-redux'
 
-import Request from '../../../api';
 const CreateUserModal = ({show, handleClose}) => {
-  const [role, setRole] = useState([]);
-
+  const role = useSelector((state) => state.configration.value)
   const [formData, setFormData] = useState([{
     first_name: '',
     last_name: '',
@@ -21,29 +20,15 @@ const CreateUserModal = ({show, handleClose}) => {
     confirm_password: ''
   }]);
 
-  useEffect(() => {
-    Request({
-      url: '/get-role'
-    })
-      .then((res) => {
-        if (res.message === 'success') {
-          setRole(res.role)
-        }
-      })
-      .catch((e) => {
-        console.log("Error fetching roles:", e);
-      });
-  }, []);
-
   const handelOnChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });  
-  };
+  }
 
   const createNewUser = (e) => {
     e.preventDefault();
   }
-
+  
   return (
     <Modal 
       show={show} 
@@ -210,12 +195,14 @@ const CreateUserModal = ({show, handleClose}) => {
                   />
                 </div>
               </div>
-
               <div className="row mb-lg-2 mb-3">
                 <div className="col small">
                   {
                     role.map((r, i) => (
-                      <div className="form-check form-check-inline" key={i}>
+                      <div 
+                        className="form-check form-check-inline" 
+                        key={i}
+                      >
                         <input 
                           className="form-check-input" 
                           type="radio" 
@@ -224,7 +211,10 @@ const CreateUserModal = ({show, handleClose}) => {
                           onChange={() => handelOnChange}
                           value={r.id}
                         />
-                        <label className="form-check-label" for="inlineRadio2">
+                        <label 
+                          className="form-check-label" 
+                          for="inlineRadio2"
+                        >
                           {r.text}
                         </label>
                       </div>
@@ -232,7 +222,6 @@ const CreateUserModal = ({show, handleClose}) => {
                   }
                 </div>
               </div>
-
               <div className="row mb-3">
                 <div className="col-lg-4 mb-lg-0 mb-2">
                   <div className="small">User Name</div>
@@ -268,7 +257,6 @@ const CreateUserModal = ({show, handleClose}) => {
                   />
                 </div>
               </div>
-
               <div className="row mb-3">
                 <div className="col">
                   <div className="row">
@@ -279,10 +267,21 @@ const CreateUserModal = ({show, handleClose}) => {
                   <div className="row small">
                     {
                       Array.from({length: 12}).map((_, i) => (
-                        <div className="col-lg-3 col-md-4 col-6 mb-2" key={i}>
+                        <div 
+                          className="col-lg-3 col-md-4 col-6 mb-2" 
+                          key={i}
+                        >
                           <div className="form-check">
-                            <input className="form-check-input" type="checkbox" value="" id="defaultCheck1" />
-                            <label className="form-check-label" for="defaultCheck1">
+                            <input 
+                              className="form-check-input" 
+                              type="checkbox" 
+                              value="" 
+                              id="defaultCheck1" 
+                            />
+                            <label 
+                              className="form-check-label" 
+                              for="defaultCheck1"
+                            >
                               Default checkbox
                             </label>
                           </div>
@@ -291,8 +290,7 @@ const CreateUserModal = ({show, handleClose}) => {
                     }
                   </div>
                 </div>
-              </div>
-              
+              </div>              
               <div className="row">
                 <div className="col">
                   <button className="btn btn-sm btn-site w-100">Submit</button>
@@ -302,7 +300,6 @@ const CreateUserModal = ({show, handleClose}) => {
           </div>
         </div>
       </Modal.Body>
-      
     </Modal>
   )
 }
