@@ -1,7 +1,6 @@
-import { useState } from "react"
-import CreateUserModal from "./createUserModal";
+import React, { useState } from 'react'
 
-const UserList = () => {
+const PurchaseOrder = () => {
   const [loding, setLoding] = useState(true)
   const [modalShow, setModalShow] = useState(false);
 
@@ -21,7 +20,7 @@ const UserList = () => {
               className="btn btn-sm btn-site"
               onClick={() => setModalShow(true)}
             >
-              <i className="bi bi-plus-circle-fill me-2"></i>Create New user
+              <i className="bi bi-plus-circle-fill me-2"></i>Create New Purchase Order
             </button>
           </div>
         </div>
@@ -31,7 +30,7 @@ const UserList = () => {
             <div className="row">
               <div className="col-8"></div>
               <div className="col">
-                <input type="text" className="form-control form-control-sm p-3" placeholder="Search Your User"/>
+                <input type="text" className="form-control form-control-sm p-3" placeholder="Search Your Supplier"/>
               </div>
             </div>
             <div className="row mt-3">
@@ -49,22 +48,18 @@ const UserList = () => {
                       <div className="col-lg-2">Action</div>
                     </div>
                   </li>
-                  {(loding)? <Spinner/> : <UserTable/>}
+                  {(loding)? <Spinner/> : <PurchaseOrderTable/>}
                 </ul>
               </div>
             </div>
           </div>
         </div>
-        <CreateUserModal 
-          show={modalShow}
-          handleClose={handleClose}
-        />
       </div>
     </div>
   )
 }
 
-const Spinner = () => {
+export const Spinner = () => {
   return (
     <li className="site-border-bottom pt-2 pb-2">
       <div className="row">
@@ -78,7 +73,7 @@ const Spinner = () => {
   )
 }
 
-const UserTable = () => {
+export const PurchaseOrderTable = () => {
   return (
     <>
       {
@@ -105,8 +100,11 @@ const UserTable = () => {
                 <button className="btn btn-sm btn-warning me-2">
                   <i className="bi bi-pencil-fill"></i>
                 </button>
-                <button className="btn btn-sm btn-danger">
+                <button className="btn btn-sm btn-danger me-2">
                   <i className="bi bi-trash-fill"></i>
+                </button>
+                <button className="btn btn-sm btn-success">
+                  <i className="bi bi-arrow-right"></i>
                 </button>
               </div>
             </div>
@@ -115,7 +113,6 @@ const UserTable = () => {
       }
     </>
   )
-
 }
-export default UserList
 
+export default PurchaseOrder

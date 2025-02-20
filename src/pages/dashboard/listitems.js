@@ -8,7 +8,7 @@ const list = [{
   show: true
 }, {
   to: '/purchase-order',
-  slug: ['purchase-order'],
+  slug: ['purchase-order', 'po', 'supplier'],
   icon: 'bi-cart-check',
   text: 'Purchase',
   tooltipText: 'Purchase Order',
@@ -48,7 +48,7 @@ const list = [{
   show: true
 }, {
   to: '/projects',
-  slug: ['projects'],
+  slug: ['projects', 'clients', 'project'],
   icon: 'bi-bricks',
   text: 'projects',
   tooltipText: 'Projects and Clients',
@@ -64,7 +64,7 @@ const list = [{
   show: true
 }, {
   to: '/settings',
-  slug: ['settings', 'user'],
+  slug: ['settings', 'user', 'mesurement', 'role', 'profile', 'status'],
   icon: 'bi bi-gear',
   text: 'Settings',
   tooltipText: 'Settings',

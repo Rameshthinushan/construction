@@ -7,6 +7,26 @@ const SettingsLayouts = () => {
     image: "group.png",
     text: "User", 
     show: true
+  }, {
+    to: "/mesurement",
+    image: "ruller.png",
+    text: "Mesurement", 
+    show: true
+  }, {
+    to: "/role",
+    image: "management.png",
+    text: "Role", 
+    show: true
+  }, {
+    to: "/profile",
+    image: "profile.png",
+    text: "Profile", 
+    show: true
+  }, {
+    to: "/status",
+    image: "time-tracking.png",
+    text: "Status", 
+    show: true
   }])
 
   return (
@@ -22,7 +42,7 @@ const SettingsLayouts = () => {
                     <div className="mb-2">
                       <img src={`assets/site-images/${sl.image}`} alt="" height={30}/>
                     </div>
-                    <div class="nav-font-color">{sl.text}</div>
+                    <div className="nav-font-color small fw-medium">{sl.text}</div>
                   </div>
                 </div>
               </Link>

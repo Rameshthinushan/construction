@@ -7,11 +7,23 @@ import Overview from '../overview/overview'
 import SettingsLayouts from '../settings/settingsLayouts'
 import UserList from '../settings/user/userList'
 import MobileLayouts from './mobileLayouts'
+import PurchaseOrderLayout from '../purchaseOrder/purchaseOrderLayout'
+import PurchaseOrder from '../purchaseOrder/po/purchaseOrder'
+import Suppliers from '../purchaseOrder/supplier/suppliers'
+import ProjectAndClientsLayout from '../projectsAndClients/layout'
+import Project from '../projectsAndClients/project/project'
+import Clients from '../projectsAndClients/clients/clients'
 
 const components = {
   overview: <Overview />,
   settings: <SettingsLayouts />,
-  user: <UserList />
+  user: <UserList />,
+  'purchase-order':<PurchaseOrderLayout />,
+  po: <PurchaseOrder />,
+  supplier: <Suppliers />,
+  projects: <ProjectAndClientsLayout />,
+  project: <Project />,
+  clients: <Clients />
 }
 
 const DashBoard = () => {
@@ -148,27 +160,27 @@ const ListItemsDeskTop = ({url}) => {
 const QuickNav = ({url}) => {
   const [quickNav, setQuickNav] = useState([{
     to: '/purchase-order',
-    slug: 'purchase-order',
+    slug: ['purchase-order', 'po', 'supplier'],
     text: 'Purchase Order',
     show: true
   }, {
     to: '/inventory',
-    slug: 'inventory',
+    slug: ['inventory'],
     text: 'Inventory',
     show: true
   }, {
     to: '/expanse',
-    slug: 'expanse',
+    slug: ['expanse'],
     text: 'Expanse',
     show: true
   }, {
     to: '/documents',
-    slug: 'documents',
+    slug: ['documents'],
     text: 'BSR / BOQ',
     show: true
   }, {
     to: '/settings',
-    slug: 'settings',
+    slug: ['settings', 'user', 'mesurement', 'role', 'profile', 'status'],
     text: 'Settings',
     show: true
   }])
@@ -179,7 +191,7 @@ const QuickNav = ({url}) => {
           (q) ? 
             <div className="col" key={i}>
               <Link to={q.to} className="nav-font-color text-decoration-none">
-                <div className={`p-2 ${(url === q.slug)? `active-quick-nav` : `quick-nav-item`}`}>{q.text}</div>
+                <div className={`p-2 ${(q.slug?.includes(url))? `active-quick-nav` : `quick-nav-item`}`}>{q.text}</div>
               </Link>
             </div>
            : ''
