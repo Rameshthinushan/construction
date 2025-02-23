@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
+import CreateSupplierModal from './createSupplierModal';
 
 const Suppliers = () => {
   const [loding, setLoding] = useState(true)
@@ -10,7 +11,7 @@ const Suppliers = () => {
 
   setTimeout(() => {
     setLoding(false)
-  }, 3000);
+  }, 1000);
   
   return (
     <div className="row">
@@ -25,7 +26,6 @@ const Suppliers = () => {
             </button>
           </div>
         </div>
-
         <div className="row">
           <div className="col">
             <div className="row">
@@ -42,9 +42,9 @@ const Suppliers = () => {
                       <div className="col-lg-1">
                         <input type="checkbox" name="" id="" className="form-check-input"/>
                       </div>
-                      <div className="col-lg-2">User Name</div>
-                      <div className="col-lg-3">User Details</div>
-                      <div className="col-lg-2">User Role</div>
+                      <div className="col-lg-2">Supplier Name</div>
+                      <div className="col-lg-5">Supplier Details</div>
+                      {/* <div className="col-lg-2">User Role</div> */}
                       <div className="col-lg-2">Active Status</div>
                       <div className="col-lg-2">Action</div>
                     </div>
@@ -55,6 +55,10 @@ const Suppliers = () => {
             </div>
           </div>
         </div>
+        <CreateSupplierModal 
+          show={modalShow}
+          handleClose={handleClose}
+        />
       </div>
     </div>
   )
@@ -85,13 +89,13 @@ export const SupplierTable = () => {
               <div className="col-lg-1">
                 <input type="checkbox" name="" id="" className="form-check-input"/>
               </div>
-              <div className="col-lg-2">Ramesh Thinushan</div>
-              <div className="col-lg-3">
-                <div>#001</div>
+              <div className="col-lg-2">Supplier - {index}</div>
+              <div className="col-lg-5">
+                <div>#{index}</div>
                 <div className="small nav-font-color">thinu@gamil.com</div>
                 <div className="small nav-font-color">077xxxxxxx</div>
               </div>
-              <div className="col-lg-2">Admin</div>
+              {/* <div className="col-lg-2">Admin</div> */}
               <div className="col-lg-2">
                 <i className="bi bi-circle-fill text-success"></i>
               </div>
