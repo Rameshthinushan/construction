@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import CreatePurchaseOrderModal from './createPurchaseOrderModal';
 
 const PurchaseOrder = () => {
   const [loding, setLoding] = useState(true)
@@ -17,7 +18,7 @@ const PurchaseOrder = () => {
         <div className="row">
           <div className="col">
             <button 
-              className="btn btn-sm btn-site"
+              className="btn btn-primary"
               onClick={() => setModalShow(true)}
             >
               <i className="bi bi-plus-circle-fill me-2"></i>Create New Purchase Order
@@ -54,6 +55,11 @@ const PurchaseOrder = () => {
             </div>
           </div>
         </div>
+
+        <CreatePurchaseOrderModal 
+          show={modalShow}
+          handleClose={handleClose}
+        />
       </div>
     </div>
   )
@@ -78,7 +84,7 @@ export const PurchaseOrderTable = () => {
     <>
       {
         Array.from({ length: 12 }).map((_, index) => (
-          <li className="site-border-bottom pt-2 pb-2 ps-1">
+          <li className="border-bottom pt-2 pb-2 ps-1 bg-white">
             <div className="row">
               <div className="col-lg-1">
                 <input type="checkbox" name="" id="" className="form-check-input"/>

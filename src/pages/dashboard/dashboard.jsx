@@ -99,7 +99,7 @@ const CustomerInfo = () => {
   return (
     <div className="m-4 me-0">
       <div className="align-items-center d-flex justify-content-end">
-        <div className="me-4 dec-font-color"><i className="bi bi-bell fs-4"></i></div>
+        <div className="me-4"><i className="bi bi-bell fs-4"></i></div>
         <div className="">
           <div className="d-flex align-items-center">
             <div className="small">
@@ -107,7 +107,7 @@ const CustomerInfo = () => {
               <div className="small nav-font-color">Thinushan@gmail.com</div>
             </div>
             <div className="ms-4">
-              <span className="fw-medium p-2 rounded-2 site-bg-compo site-border">RT</span>
+              <span className="fw-medium p-2 rounded-2 user-info">RT</span>
             </div>
           </div>
         </div>
@@ -185,7 +185,7 @@ const QuickNav = ({url}) => {
     show: true
   }])
   return (
-    <div className="site-bg-compo p-3 rounded-2 site-border">
+    <div className="site-bg-compo p-3 rounded-2 shadow">
       <div className="row fw-medium text-center align-items-center">
         {quickNav.map((q, i) => (
           (q) ? 

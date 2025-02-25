@@ -293,7 +293,7 @@ const CreateUserModal = ({show, handleClose}) => {
               </div>              
               <div className="row">
                 <div className="col">
-                  <button className="btn btn-sm btn-site w-100">Submit</button>
+                  <button className="btn btn-sm btn-primary w-100">Submit</button>
                 </div>
               </div>
             </form>

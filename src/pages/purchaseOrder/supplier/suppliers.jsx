@@ -19,7 +19,7 @@ const Suppliers = () => {
         <div className="row">
           <div className="col">
             <button 
-              className="btn btn-sm btn-site"
+              className="btn btn-sm btn-primary"
               onClick={() => setModalShow(true)}
             >
               <i className="bi bi-plus-circle-fill me-2"></i>Create New Supplier

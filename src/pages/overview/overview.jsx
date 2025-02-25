@@ -7,10 +7,10 @@ import React from 'react'
         <div className="col">
           <div className="row">
             <div className="col">
-              <div className="site-bg-compo p-3 rounded-2 site-border h-100">
+              <div className="site-bg-compo p-3 rounded-2 shadow h-100">
                 <div>
                   <div className="text-end nav-font-color small mb-2">2025-01-01 <span className="fw-bold text-white ms-2 me-2">To</span> 2025-01-23</div>
-                  <div className="d-flex align-items-end site-border-bottom pb-2">
+                  <div className="d-flex align-items-end border-bottom pb-2">
                     <div className="w-100">
                       <h6 className="mb-3">Heloooo WelcomeBack Mr.Thinu 😎</h6>
                       <h5>Your Company</h5>
@@ -45,7 +45,7 @@ import React from 'react'
             <div className="col">
               <div className="row mb-4">
                 <div className="col">
-                  <div className="site-bg-compo pt-3 pb-3 ps-4 pe-4 rounded-2 site-border h-100 zoom">
+                  <div className="site-bg-compo pt-3 pb-3 ps-4 pe-4 rounded-2 shadow h-100 zoom">
                     <div className="d-flex">
                       <div className="w-100">
                         <div className="nav-font-color">Ongoing Projects</div>
@@ -59,7 +59,7 @@ import React from 'react'
                   </div>
                 </div>
                 <div className="col">
-                  <div className="site-bg-compo pt-3 pb-3 ps-4 pe-4 rounded-2 site-border h-100 zoom">
+                  <div className="site-bg-compo pt-3 pb-3 ps-4 pe-4 rounded-2 shadow h-100 zoom">
                     <div className="d-flex">
                       <div className="w-100">
                         <div className="nav-font-color">Ongoing Projects</div>
@@ -76,7 +76,7 @@ import React from 'react'
 
               <div className="row">
                 <div className="col">
-                  <div className="site-bg-compo pt-3 pb-3 ps-4 pe-4 rounded-2 site-border h-100 zoom">
+                  <div className="site-bg-compo pt-3 pb-3 ps-4 pe-4 rounded-2 shadow h-100 zoom">
                     <div className="d-flex">
                       <div className="w-100">
                         <div className="nav-font-color">Ongoing Projects</div>
@@ -90,7 +90,7 @@ import React from 'react'
                   </div>
                 </div>
                 <div className="col">
-                  <div className="site-bg-compo pt-3 pb-3 ps-4 pe-4 rounded-2 site-border h-100 zoom">
+                  <div className="site-bg-compo pt-3 pb-3 ps-4 pe-4 rounded-2 shadow h-100 zoom">
                     <div className="d-flex">
                       <div className="w-100">
                         <div className="nav-font-color">Ongoing Projects</div>
@@ -108,12 +108,12 @@ import React from 'react'
           </div>
           <div className="row mt-4">
             <div className="col">
-              <div className="site-bg-compo p-3 rounded-2 site-border h-100 text-center">
+              <div className="site-bg-compo p-3 rounded-2 shadow h-100 text-center">
                 Load More...
               </div>
             </div>
             <div className="col">
-              <div className="site-bg-compo p-3 rounded-2 site-border h-100 text-center">
+              <div className="site-bg-compo p-3 rounded-2 shadow h-100 text-center">
                 Load More...
               </div>
             </div>
