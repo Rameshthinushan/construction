@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-  --site-body-color: #e2e3e5;
+  --site-body-color: #e2e3e542;
   --site-body-color-compo: #ffffff;
   --site-theme-font-color: #ff4655;
   --site-theme-active-color: #44202e;
@@ -18,9 +18,14 @@ body {
   font-family: "Roboto", serif !important;
 }
 
-/* .table-header {
+.table-header {
+  background: #7d3bdf !important;
+  color: #ffffff;
+}
 
-} */
+.color-purple {
+  color: #7d3bdf;
+}
 
 /* .form-control, .form-select {
   background: var(--site-body-color-compo) !important;
@@ -47,7 +52,7 @@ body {
 }
 
 .nav-font-color {
-  color: #8b8fa0
+  color: #8b8fa0 !important;
 }
 
 .active {
@@ -188,6 +193,10 @@ body {
   background: #555555 !important;
 } */
 
-/* .po-container {
-  background-color: #16162385;
-} */
+.po-container {
+  background-color: #f7f9fa;
+}
+
+.add-new-line-btn {
+  border: #aeb4b7 1px dashed !important;
+}

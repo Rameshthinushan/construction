@@ -38,40 +38,32 @@ const CreateSupplierModal = ({show, handleClose}) => {
       onHide={handleClose}
       size="lg"
     >
-      <div className="row">
-        <div className="col text-end">
-          <button
-            onClick={handleClose} 
-            className="unset me-3 mt-3"
-          >
-            <i className="bi bi-x"></i>
-          </button>
-        </div>
-      </div>
+      <Modal.Header 
+        closeButton 
+        className="border-0" 
+      />
       <Modal.Body>
         <div className="row">
           <div className="col">
             <form action="" onSubmit={createNewUser}>
-              <div className="row mb-3">
+              <div className="row mb-2">
                 <div className="col">
                   <div className="row mb-2">
                     <div className="col">
-                      <div className="small">Supplier Name</div>
                       <input 
                         type="text" 
                         className="form-control form-control-sm p-2" 
-                        placeholder="e.g. johnny"
+                        placeholder="Supplier Name"
                         name="first_name"
                         onChange={() => handelOnChange}
                         value={formData.first_name}
                       />
                     </div>
                     <div className="col">
-                      <div className="small">Supplier Nick Name</div>
                       <input 
                         type="text" 
                         className="form-control form-control-sm p-2" 
-                        placeholder="e.g. Sins"
+                        placeholder="Supplier Nick Name"
                         name="last_name"
                         onChange={() => handelOnChange}
                         value={formData.last_name}
@@ -80,63 +72,35 @@ const CreateSupplierModal = ({show, handleClose}) => {
                   </div>
                   <div className="row mb-2">
                     <div className="col">
-                      <div className="small">Mobile Number</div>
                       <input 
                         type="text" 
                         className="form-control form-control-sm p-2" 
-                        placeholder="e.g. 076 xxx xxxx"
+                        placeholder="Contact Number"
                         name="phone"
                         onChange={() => handelOnChange}
                         value={formData.phone}
                       />
                     </div>
                     <div className="col">
-                      <div className="small">Email Addres</div>
+                      <div className="small"></div>
                       <input 
                         type="text" 
                         className="form-control form-control-sm p-2" 
-                        placeholder="e.g. example@gmail.com"
+                        placeholder="Email Addres"
                         name="email"
                         onChange={() => handelOnChange}
                         value={formData.nic}
                       />
                     </div>
                   </div>
-                  {/* <div className="row">
-                    <div className="col small">
-                      <div className="form-check form-check-inline">
-                      <input 
-                        className="form-check-input" 
-                        type="radio" 
-                        name="gender" 
-                        id="male" 
-                        onChange={() => handelOnChange}
-                        value={formData.gender} 
-                      />
-                      <label className="form-check-label" for="male">Male</label>
-                    </div>
-                    <div className="form-check form-check-inline">
-                      <input 
-                        className="form-check-input" 
-                        type="radio" 
-                        name="gender" 
-                        id="female" 
-                        onChange={() => handelOnChange}
-                        value={formData.gender} 
-                      />
-                      <label className="form-check-label" for="female">Female</label>
-                    </div>
-                    </div>
-                  </div> */}
                 </div>
               </div>
               <div className="row mb-2">
                 <div className="col">
-                  <div className="small">Address Line 1</div>
                   <input 
                     type="text" 
                     className="form-control form-control-sm p-2" 
-                    placeholder="Your Street Name Line 1"
+                    placeholder="Address Line 1"
                     name="address_line_1"
                     onChange={() => handelOnChange}
                     value={formData.address_line_1}
@@ -148,7 +112,7 @@ const CreateSupplierModal = ({show, handleClose}) => {
                   <input 
                     type="text" 
                     className="form-control form-control-sm p-2" 
-                    placeholder="Your Street Name Line 2"
+                    placeholder="Address Line 2"
                     name="address_line_2"
                     onChange={() => handelOnChange}
                     value={formData.address_line_2}
@@ -157,33 +121,30 @@ const CreateSupplierModal = ({show, handleClose}) => {
               </div>
               <div className="row mb-3">
                 <div className="col">
-                  <div className="small">City</div>
                   <input 
                     type="text" 
                     className="form-control form-control-sm p-2" 
-                    placeholder="e.g. jaffna"
+                    placeholder="City"
                     name="city"
                     onChange={() => handelOnChange}
                     value={formData.city}
                   />
                 </div>
                 <div className="col">
-                  <div className="small">Province</div>
                   <input 
                     type="text" 
                     className="form-control form-control-sm p-2" 
-                    placeholder="e.g. Northern"
+                    placeholder="Province"
                     name="province"
                     onChange={() => handelOnChange}
                     value={formData.province}
                   />
                 </div>
                 <div className="col">
-                  <div className="small">Zip Code</div>
                   <input 
                     type="text" 
                     className="form-control form-control-sm p-2" 
-                    placeholder="e.g. 40000"
+                    placeholder="Postal Code / Zip Code"
                     name="zip"
                     onChange={() => handelOnChange}
                     value={formData.zip}
@@ -203,7 +164,7 @@ const CreateSupplierModal = ({show, handleClose}) => {
               </div>
               <div className="row mb-lg-4 mb-3">
                 <div className="col small">
-                  <div className="mb-2 border-bottom pb-2 border-secondary">Active Status</div>
+                  <div className="mb-2 border-bottom pb-2">Active Status</div>
                   <div className="form-check form-check-inline">
                     <input 
                       className="form-check-input" 
@@ -234,7 +195,7 @@ const CreateSupplierModal = ({show, handleClose}) => {
 
                 </div>
                 <div className="col small">
-                  <div className="mb-2 border-bottom pb-2 border-secondary">Display Status</div>
+                  <div className="mb-2 border-bottom pb-2">Display Status</div>
                   <div className="form-check form-check-inline">
                     <input 
                       className="form-check-input" 
@@ -248,7 +209,6 @@ const CreateSupplierModal = ({show, handleClose}) => {
                       Display in System
                     </label>
                   </div>
-
                   <div className="form-check form-check-inline">
                     <input 
                       className="form-check-input" 
@@ -262,12 +222,68 @@ const CreateSupplierModal = ({show, handleClose}) => {
                       Hide in System
                     </label>
                   </div>
-
+                </div>
+              </div>
+              <div className="row mb-4">
+                <div className="col small">
+                  <div className="mb-2 border-bottom pb-2">Orders Send Media</div>
+                  <div className="form-check form-check-inline">
+                    <input 
+                      className="form-check-input" 
+                      type="checkbox" 
+                      name="role" 
+                      id="active" 
+                      onChange={() => handelOnChange}
+                      value="active"
+                    />
+                    <label className="form-check-label" for="active">
+                      Email
+                    </label>
+                  </div>
+                  <div className="form-check form-check-inline">
+                    <input 
+                      className="form-check-input" 
+                      type="checkbox" 
+                      name="role" 
+                      id="active" 
+                      onChange={() => handelOnChange}
+                      value="active"
+                    />
+                    <label className="form-check-label" for="active">
+                      Message
+                    </label>
+                  </div>
+                  <div className="form-check form-check-inline">
+                    <input 
+                      className="form-check-input" 
+                      type="checkbox" 
+                      name="role" 
+                      id="active" 
+                      onChange={() => handelOnChange}
+                      value="active"
+                    />
+                    <label className="form-check-label" for="active">
+                      By Hand
+                    </label>
+                  </div>
+                  <div className="form-check form-check-inline">
+                    <input 
+                      className="form-check-input" 
+                      type="checkbox" 
+                      name="role" 
+                      id="active" 
+                      onChange={() => handelOnChange}
+                      value="active"
+                    />
+                    <label className="form-check-label" for="active">
+                      Over The Phone
+                    </label>
+                  </div>
                 </div>
               </div>
               <div className="row">
-                <div className="col">
-                  <button className="btn btn-sm btn-primary w-100">Submit</button>
+                <div className="col text-center">
+                  <button className="btn btn-sm btn-warning w-25">Submit</button>
                 </div>
               </div>
             </form>

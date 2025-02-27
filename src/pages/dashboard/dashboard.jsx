@@ -62,7 +62,7 @@ const DashboardDeskTop = ({domin}) => {
     <div className="row">
       <div className="col">
         <div className="row dt-dashboard-container">
-          <div className="col-1 site-bg-compo text-center">
+          <div className="col-1 site-bg-compo text-center border-end">
             <div className="mb-4">
               <img src="/assets/site-images/newlog.png" alt="" height="100"/>
             </div>
@@ -145,7 +145,7 @@ const ListItemsDeskTop = ({url}) => {
             : ''
           ))
         }
-        <li className="mt-5 site-border-top pt-3">
+        <li className="mt-5 border-top pt-3">
           <Link to='/logout' className="nav-font-color">
             <span className="nav-list-item">
               <i className="bi bi-power fs-5"></i>

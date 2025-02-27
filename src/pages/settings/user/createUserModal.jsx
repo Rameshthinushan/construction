@@ -35,16 +35,10 @@ const CreateUserModal = ({show, handleClose}) => {
       onHide={handleClose}
       size="lg"
     >
-      <div className="row">
-        <div className="col text-end">
-          <button
-            onClick={handleClose} 
-            className="unset me-3 mt-3"
-          >
-            <i className="bi bi-x"></i>
-          </button>
-        </div>
-      </div>
+      <Modal.Header 
+        closeButton 
+        className="border-0" 
+      />
       <Modal.Body>
         <div className="row">
           <div className="col">
@@ -53,7 +47,7 @@ const CreateUserModal = ({show, handleClose}) => {
                 <div className="col-lg-2 mb-lg-0 mb-3">
                   <div className="align-items-center site-dash-border d-flex h-100 justify-content-around rounded-2">
                     <label for="user-image">
-                      <img src="assets/site-images/image-.png" alt="" height="50" className="m-4"/>
+                      <i class="bi bi-image-alt fs-1"></i>
                     </label>
                     <input type="file" id="user-image" className="d-none"/>
                   </div>
@@ -61,22 +55,20 @@ const CreateUserModal = ({show, handleClose}) => {
                 <div className="col-lg-10">
                   <div className="row mb-2">
                     <div className="col">
-                      <div className="small">First Name</div>
                       <input 
                         type="text" 
                         className="form-control form-control-sm p-2" 
-                        placeholder="e.g. johnny"
+                        placeholder="First Name"
                         name="first_name"
                         onChange={() => handelOnChange}
                         value={formData.first_name}
                       />
                     </div>
                     <div className="col">
-                      <div className="small">Last Name</div>
                       <input 
                         type="text" 
                         className="form-control form-control-sm p-2" 
-                        placeholder="e.g. Sins"
+                        placeholder="Last Name"
                         name="last_name"
                         onChange={() => handelOnChange}
                         value={formData.last_name}
@@ -85,22 +77,20 @@ const CreateUserModal = ({show, handleClose}) => {
                   </div>
                   <div className="row mb-2">
                     <div className="col">
-                      <div className="small">NIC Number</div>
                       <input 
                         type="text" 
                         className="form-control form-control-sm p-2" 
-                        placeholder="xxxxxxxxxV"
+                        placeholder="NIC Number"
                         name="email"
                         onChange={() => handelOnChange}
                         value={formData.nic}
                       />
                     </div>
                     <div className="col">
-                      <div className="small">Mobile Number</div>
                       <input 
                         type="text" 
                         className="form-control form-control-sm p-2" 
-                        placeholder="e.g. 076 xxx xxxx"
+                        placeholder="Mobile Number"
                         name="phone"
                         onChange={() => handelOnChange}
                         value={formData.phone}
@@ -137,11 +127,10 @@ const CreateUserModal = ({show, handleClose}) => {
               </div>
               <div className="row mb-2">
                 <div className="col">
-                  <div className="small">Address Line 1</div>
                   <input 
                     type="text" 
                     className="form-control form-control-sm p-2" 
-                    placeholder="Your Street Name Line 1"
+                    placeholder="Address Line 1"
                     name="address_line_1"
                     onChange={() => handelOnChange}
                     value={formData.address_line_1}
@@ -153,7 +142,7 @@ const CreateUserModal = ({show, handleClose}) => {
                   <input 
                     type="text" 
                     className="form-control form-control-sm p-2" 
-                    placeholder="Your Street Name Line 2"
+                    placeholder="Address Line 2"
                     name="address_line_2"
                     onChange={() => handelOnChange}
                     value={formData.address_line_2}
@@ -162,33 +151,32 @@ const CreateUserModal = ({show, handleClose}) => {
               </div>
               <div className="row mb-3">
                 <div className="col">
-                  <div className="small">City</div>
                   <input 
                     type="text" 
                     className="form-control form-control-sm p-2" 
-                    placeholder="e.g. jaffna"
+                    placeholder="City"
                     name="city"
                     onChange={() => handelOnChange}
                     value={formData.city}
                   />
                 </div>
                 <div className="col">
-                  <div className="small">Province</div>
+                  <div className="small"></div>
                   <input 
                     type="text" 
                     className="form-control form-control-sm p-2" 
-                    placeholder="e.g. Northern"
+                    placeholder="Province"
                     name="province"
                     onChange={() => handelOnChange}
                     value={formData.province}
                   />
                 </div>
                 <div className="col">
-                  <div className="small">Zip Code</div>
+                  <div className="small"></div>
                   <input 
                     type="text" 
                     className="form-control form-control-sm p-2" 
-                    placeholder="e.g. 40000"
+                    placeholder="Postal code / Zip Code"
                     name="zip"
                     onChange={() => handelOnChange}
                     value={formData.zip}
@@ -224,33 +212,32 @@ const CreateUserModal = ({show, handleClose}) => {
               </div>
               <div className="row mb-3">
                 <div className="col-lg-4 mb-lg-0 mb-2">
-                  <div className="small">User Name</div>
+                  <div className="small"></div>
                   <input 
                     type="text" 
                     className="form-control form-control-sm p-2" p
-                    laceholder="e.g. JSins"
+                    placeholder="User Name"
                     name='username'
                     onChange={() => handelOnChange}
                     value={formData.username}
                   />
                 </div>
                 <div className="col-lg-4 col-6">
-                  <div className="small">Password</div>
                   <input 
                     type="text" 
                     className="form-control form-control-sm p-2" 
-                    placeholder="e.g. ........."
+                    placeholder="Password"
                     name="password"
                     onChange={() => handelOnChange}
                     value={formData.password}
                   />
                 </div>
                 <div className="col-lg-4 col-6">
-                  <div className="small">Confirm Password</div>
+                  <div className="small"></div>
                   <input 
                     type="text" 
                     className="form-control form-control-sm p-2" 
-                    placeholder="e.g. ........."
+                    placeholder="Confirm Password"
                     name="confirm_password"
                     onChange={() => handelOnChange}
                     value={formData.confirm_password}
@@ -261,7 +248,7 @@ const CreateUserModal = ({show, handleClose}) => {
                 <div className="col">
                   <div className="row">
                     <div className="col">
-                      <div className='border-bottom border-secondary mb-2 pb-2'> Set user Permisions </div>
+                      <div className='border-bottom mb-2 pb-2'> Set user Permisions </div>
                     </div>
                   </div>
                   <div className="row small">
@@ -292,8 +279,8 @@ const CreateUserModal = ({show, handleClose}) => {
                 </div>
               </div>              
               <div className="row">
-                <div className="col">
-                  <button className="btn btn-sm btn-primary w-100">Submit</button>
+                <div className="col text-center">
+                  <button className="btn btn-sm btn-warning w-25">Submit</button>
                 </div>
               </div>
             </form>

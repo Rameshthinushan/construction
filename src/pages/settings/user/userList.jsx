@@ -37,7 +37,7 @@ const UserList = () => {
             <div className="row mt-3">
               <div className="col">
                 <ul className="list-unstyled small">
-                  <li className="site-border-bottom pt-2 pb-2 ps-1">
+                  <li className="site-border-bottom pt-3 pb-3 ps-3 table-header">
                     <div className="row">
                       <div className="col-lg-1">
                         <input type="checkbox" name="" id="" className="form-check-input"/>
@@ -83,7 +83,7 @@ const UserTable = () => {
     <>
       {
         Array.from({ length: 12 }).map((_, index) => (
-          <li className="site-border-bottom pt-2 pb-2 ps-1">
+          <li className="border-bottom pt-2 pb-2 ps-3 bg-white">
             <div className="row">
               <div className="col-lg-1">
                 <input type="checkbox" name="" id="" className="form-check-input"/>
