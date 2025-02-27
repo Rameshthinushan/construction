@@ -27,7 +27,7 @@ const Items = () => {
           {
             list.map((l, i) => (
               <div className="col-4 mb-3" key={i}>
-                <div className="site-bg-compo site-border rounded-3 p-3 text-center h-100">
+                <div className="site-bg-compo site-border rounded-3 p-3 text-center h-100 shadow">
                   <Link to={l.to} className="text-decoration-none">
                     <div className="dec-font-color mb-2">
                       <i className={`bi ${l.icon} fs-1`}></i>
@@ -55,7 +55,7 @@ const Notification = () => {
         </div>
         <div className="row">
           <div className="col-4 mb-3">
-            <div className="site-bg-compo site-border rounded-3 p-3 text-center h-100">
+            <div className="site-bg-compo site-border rounded-3 p-3 text-center h-100 shadow">
               <Link className="text-decoration-none">
                 <div className="dec-font-color mb-2">
                   <i className={`bi bi-bell fs-1`}></i>
@@ -81,7 +81,7 @@ const Logout = () => {
         </div>
         <div className="row">
           <div className="col-4 mb-3">
-            <div className="site-bg-compo site-border rounded-3 p-3 text-center h-100">
+            <div className="site-bg-compo site-border rounded-3 p-3 text-center h-100 shadow">
               <Link className="text-decoration-none">
                 <div className="dec-font-color mb-2">
                   <i className={`bi bi-power fs-1`}></i>
@@ -100,10 +100,10 @@ const UserSection = () => {
   return (
     <div className="row mb-4 mt-3">
       <div className="col">
-        <div className="site-border rounded-3 p-3 site-bg-compo">
+        <div className="site-border rounded-3 p-3 site-bg-compo shadow">
           <div className="d-flex align-items-center">
             <div className="me-3 ms-2">
-              <span className='nav-text-name'>RT</span>
+              <span className='nav-text-name user-info'>RT</span>
             </div>
             <div className="small w-auto">
               <div className="fw-medium">Thinushan <i className="bi bi-patch-check-fill text-primary"></i></div>

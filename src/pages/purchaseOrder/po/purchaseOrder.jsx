@@ -18,7 +18,7 @@ const PurchaseOrder = () => {
         <div className="row">
           <div className="col">
             <button 
-              className="btn btn-primary"
+              className="btn btn-warning"
               onClick={() => setModalShow(true)}
             >
               <i className="bi bi-plus-circle-fill me-2"></i>Create New Purchase Order
@@ -85,7 +85,7 @@ export const PurchaseOrderTable = () => {
       {
         Array.from({ length: 12 }).map((_, index) => (
           <li className="border-bottom pt-2 pb-2 ps-3 bg-white">
-            <div className="row">
+            <div className="row align-items-center">
               <div className="col-lg-1">
                 <input type="checkbox" name="" id="" className="form-check-input"/>
               </div>
@@ -100,16 +100,16 @@ export const PurchaseOrderTable = () => {
                 <i className="bi bi-circle-fill text-success"></i>
               </div>
               <div className="col-lg-2">
-                <button className="btn btn-sm btn-primary me-2">
+                <button className="btn btn-sm btn-outline-primary me-2">
                   <i className="bi bi-eye-fill"></i>
                 </button>
-                <button className="btn btn-sm btn-warning me-2">
+                <button className="btn btn-sm btn-outline-secondary me-2">
                   <i className="bi bi-pencil-fill"></i>
                 </button>
-                <button className="btn btn-sm btn-danger me-2">
+                <button className="btn btn-sm btn-outline-danger me-2">
                   <i className="bi bi-trash-fill"></i>
                 </button>
-                <button className="btn btn-sm btn-success">
+                <button className="btn btn-sm btn-outline-dark">
                   <i className="bi bi-arrow-right"></i>
                 </button>
               </div>

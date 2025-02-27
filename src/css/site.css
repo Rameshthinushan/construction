@@ -4,43 +4,39 @@
 :root {
   --site-body-color: #e2e3e542;
   --site-body-color-compo: #ffffff;
+  --site-nav-font: #D4D8DD;
+  --color-purple: #7d3bdf;
+  --nav-active-font-color: #ffffff;
+  --nav-font-color: #8b8fa0;
+  --active-nav-mesurement: 12px 8px 6px 8px;
+  --nav-border-radius: 6px; 
+  --quick-nav-border-radius: 4px;
+
   --site-theme-font-color: #ff4655;
   --site-theme-active-color: #44202e;
   --site-font-color: #ffffff;
   --site-nav-bacground: #2E4156;
-  --site-nav-font: #D4D8DD;
+  
   --site-btn-background: #1A2D42;
 }
 
 body {
   background-color: var(--site-body-color) !important;
-  /* color: var(--site-font-color) !important; */
   font-family: "Roboto", serif !important;
 }
 
 .table-header {
-  background: #7d3bdf !important;
-  color: #ffffff;
+  background: var(--color-purple) !important;
+  color: var(--nav-active-font-color);
 }
 
 .color-purple {
-  color: #7d3bdf;
+  color: var(--color-purple);
 }
 
-/* .form-control, .form-select {
-  background: var(--site-body-color-compo) !important;
-  color: var(--site-font-color) !important;
-  border: 0.5px solid #26282f !important;
-} */
-
-/* .btn-primary {
-  background: var(--site-theme-font-color) !important;
-  color: var(--site-font-color) !important;
-} */
-
 .user-info {
-  background: #4B49AC;
-  color: #ffffff;
+  background: var(--color-purple);
+  color: var(--nav-active-font-color);
 }
 
 .dec-font-color {
@@ -52,50 +48,41 @@ body {
 }
 
 .nav-font-color {
-  color: #8b8fa0 !important;
+  color: var(--nav-font-color) !important;
 }
 
 .active {
-  background: #4B49AC;
-  padding: 12px 8px 6px 8px;
-  color: #ffffff !important;
-  border-radius: 6px;
+  background: var(--color-purple);
+  padding: var(--active-nav-mesurement);
+  color: var(--nav-active-font-color) !important;
+  border-radius: var(--nav-border-radius);
 }
 
 .nav-list-item:hover {
-  background: #4B49AC;
-  padding: 12px 8px 6px 8px;
-  color: #ffffff !important;
-  border-radius: 6px;
+  background: var(--color-purple);
+  padding: var(--active-nav-mesurement);
+  color: var(--nav-active-font-color) !important;
+  border-radius: var(--nav-border-radius);
   cursor: pointer;
-  /* transition: background 2s; */
 }
 
 .active-quick-nav {
-  background: #4B49AC;
-  border-radius: 4px;
-  color: var(--site-font-color)
+  background: var(--color-purple);
+  color: var(--site-font-color);
+  border-radius: var(--quick-nav-border-radius);
 }
 
 .quick-nav-item:hover {
-  background: #4B49AC;
-  border-radius: 4px;
+  background: var(--color-purple);
   color: var(--site-font-color);
+  border-radius: var(--quick-nav-border-radius);
   cursor: pointer;
-  /* transition: background 1.5s; */
 }
 
-/* .site-border {
-  border: 0.5px solid #26282f !important;
+.nab-bg {
+  background: var(--site-nav-bacground);
+  color: var(--site-nav-font);
 }
-
-.site-border-bottom {
-  border-bottom: 0.5px solid #26282f !important;
-}
-
-.site-border-top {
-  border-top: 0.5px solid #26282f !important;
-} */
 
 .site-dash-border {
   border: dashed 0.5px;
@@ -108,7 +95,7 @@ body {
 }
 
 .zoom {
-  transition: transform .2s; /* Animation */
+  transition: transform .2s;
 }
 
 .zoom:hover {
@@ -119,11 +106,6 @@ body {
   all: unset;
 }
 
-.nab-bg {
-  background: var(--site-nav-bacground);
-  color: var(--site-nav-font);
-}
-
 .site-btn {
   background-color: var(--site-btn-background) !important;
   color: var(--site-nav-font) !important;
@@ -131,7 +113,7 @@ body {
 
 ::placeholder {
   color: #838181 !important; 
-  opacity: 1; /* Firefox */
+  opacity: 1;
 }
 
 .dt-dashboard-container {
@@ -149,10 +131,7 @@ body {
 
 .mobile-nav-btn {
   all: unset;
-  /* border: 1px solid #6a6868;
-  padding: 2px 6px 2px 6px; */
   color: #aca9a9;
-  /* border-radius: 5px; */
 }
 
 .nav-text-name {
@@ -168,30 +147,8 @@ body {
 }
 
 .w-100px {
-  width: 110px;
+  width: 106px;
 }
-
-/* .modal-content {
-  background-color: #142c46 !important; 
-} */
-
-
-/* .css-t3ipsp-control, .css-10wo9uf-option, .css-13cymwt-control {
-  background: #161623 !important;
-  border: 0.5px solid #26282f !important;
-  color: #fbfeff !important;
-}
-
-.css-1dimb5e-singleValue {
-  color: var(--site-font-color) !important;
-}
-.css-1nmdiq5-menu {
-  background: #161623 !important;
-}
-
-.css-d7l1ni-option {
-  background: #555555 !important;
-} */
 
 .po-container {
   background-color: #f7f9fa;
