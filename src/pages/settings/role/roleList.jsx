@@ -1,7 +1,7 @@
 import { useState } from "react"
-import CreateUserModal from "./createUserModal";
+import CreateRoleModal from "./createRoleModal";
 
-const UserList = () => {
+const RoleList = () => {
   const [loding, setLoding] = useState(true)
   const [modalShow, setModalShow] = useState(false);
 
@@ -18,10 +18,10 @@ const UserList = () => {
         <div className="row">
           <div className="col">
             <button 
-              className="btn btn-warning"
+              className="btn btn btn-warning"
               onClick={() => setModalShow(true)}
             >
-              <i className="bi bi-plus-circle-fill me-2"></i>Create New user
+              <i className="bi bi-plus-circle-fill me-2"></i>Create New Role
             </button>
           </div>
         </div>
@@ -42,20 +42,19 @@ const UserList = () => {
                       <div className="col-lg-1">
                         <input type="checkbox" name="" id="" className="form-check-input"/>
                       </div>
-                      <div className="col-lg-2">User Name</div>
-                      <div className="col-lg-3">User Details</div>
-                      <div className="col-lg-2">User Role</div>
-                      <div className="col-lg-2">Active Status</div>
+                      <div className="col-lg-4">Role</div>
+                      <div className="col-lg-3">Create By</div>
+                      <div className="col-lg-2">Status</div>
                       <div className="col-lg-2">Action</div>
                     </div>
                   </li>
-                  {(loding)? <Spinner/> : <UserTable/>}
+                  {(loding)? <Spinner/> : <RoleTable/>}
                 </ul>
               </div>
             </div>
           </div>
         </div>
-        <CreateUserModal 
+        <CreateRoleModal 
           show={modalShow}
           handleClose={handleClose}
         />
@@ -78,7 +77,7 @@ const Spinner = () => {
   )
 }
 
-const UserTable = () => {
+const RoleTable = () => {
   return (
     <>
       {
@@ -88,13 +87,12 @@ const UserTable = () => {
               <div className="col-lg-1">
                 <input type="checkbox" name="" id="" className="form-check-input"/>
               </div>
-              <div className="col-lg-2">Ramesh Thinushan</div>
+              <div className="col-lg-4">Ramesh Thinushan</div>
               <div className="col-lg-3">
                 <div>#001</div>
                 <div className="small nav-font-color">thinu@gamil.com</div>
                 <div className="small nav-font-color">077xxxxxxx</div>
               </div>
-              <div className="col-lg-2">Admin</div>
               <div className="col-lg-2">
                 <i className="bi bi-circle-fill text-success"></i>
               </div>
@@ -117,5 +115,5 @@ const UserTable = () => {
   )
 
 }
-export default UserList
+export default RoleList
 

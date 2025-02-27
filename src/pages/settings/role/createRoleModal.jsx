@@ -2,7 +2,7 @@ import {Modal} from 'react-bootstrap'
 import { useState } from 'react'
 import { useSelector } from 'react-redux'
 
-const CreateUserModal = ({show, handleClose}) => {
+const CreateRoleModal = ({show, handleClose}) => {
   const role = useSelector((state) => state.configration.value)
   const [formData, setFormData] = useState([{
     first_name: '',
@@ -33,7 +33,7 @@ const CreateUserModal = ({show, handleClose}) => {
     <Modal 
       show={show} 
       onHide={handleClose}
-      size="lg"
+      size="md"
     >
       <Modal.Header 
         closeButton 
@@ -44,27 +44,27 @@ const CreateUserModal = ({show, handleClose}) => {
           <div className="col">
             <form action="" onSubmit={createNewUser}>
               <div className="row mb-3">
-                <div className="col-lg-2 mb-lg-0 mb-3">
+                {/* <div className="col-lg-2 mb-lg-0 mb-3">
                   <div className="align-items-center site-dash-border d-flex h-100 justify-content-around rounded-2">
                     <label for="user-image">
                       <i class="bi bi-image-alt fs-1"></i>
                     </label>
                     <input type="file" id="user-image" className="d-none"/>
                   </div>
-                </div>
-                <div className="col-lg-10">
+                </div> */}
+                <div className="col">
                   <div className="row mb-2">
                     <div className="col">
                       <input 
                         type="text" 
                         className="form-control form-control-sm p-2" 
-                        placeholder="First Name"
+                        placeholder="New Role"
                         name="first_name"
                         onChange={() => handelOnChange}
                         value={formData.first_name}
                       />
                     </div>
-                    <div className="col">
+                    {/* <div className="col">
                       <input 
                         type="text" 
                         className="form-control form-control-sm p-2" 
@@ -73,20 +73,20 @@ const CreateUserModal = ({show, handleClose}) => {
                         onChange={() => handelOnChange}
                         value={formData.last_name}
                       />
-                    </div>
+                    </div> */}
                   </div>
                   <div className="row mb-2">
                     <div className="col">
-                      <input 
+                      <textarea 
                         type="text" 
                         className="form-control form-control-sm p-2" 
-                        placeholder="NIC Number"
+                        placeholder="Comments"
                         name="email"
                         onChange={() => handelOnChange}
                         value={formData.nic}
                       />
                     </div>
-                    <div className="col">
+                    {/* <div className="col">
                       <input 
                         type="text" 
                         className="form-control form-control-sm p-2" 
@@ -95,7 +95,7 @@ const CreateUserModal = ({show, handleClose}) => {
                         onChange={() => handelOnChange}
                         value={formData.phone}
                       />
-                    </div>
+                    </div> */}
                   </div>
                   <div className="row">
                     <div className="col small">
@@ -108,7 +108,7 @@ const CreateUserModal = ({show, handleClose}) => {
                         onChange={() => handelOnChange}
                         value={formData.gender} 
                       />
-                      <label className="form-check-label" for="male">Male</label>
+                      <label className="form-check-label" for="male">Active</label>
                     </div>
                     <div className="form-check form-check-inline">
                       <input 
@@ -119,13 +119,13 @@ const CreateUserModal = ({show, handleClose}) => {
                         onChange={() => handelOnChange}
                         value={formData.gender} 
                       />
-                      <label className="form-check-label" for="female">Female</label>
+                      <label className="form-check-label" for="female">Non Active</label>
                     </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="row mb-2">
+              {/* <div className="row mb-2">
                 <div className="col">
                   <input 
                     type="text" 
@@ -136,8 +136,8 @@ const CreateUserModal = ({show, handleClose}) => {
                     value={formData.address_line_1}
                   />
                 </div>
-              </div>
-              <div className="row mb-2">
+              </div> */}
+              {/* <div className="row mb-2">
                 <div className="col">
                   <input 
                     type="text" 
@@ -148,8 +148,8 @@ const CreateUserModal = ({show, handleClose}) => {
                     value={formData.address_line_2}
                   />
                 </div>
-              </div>
-              <div className="row mb-3">
+              </div> */}
+              {/* <div className="row mb-3">
                 <div className="col">
                   <input 
                     type="text" 
@@ -182,8 +182,8 @@ const CreateUserModal = ({show, handleClose}) => {
                     value={formData.zip}
                   />
                 </div>
-              </div>
-              <div className="row mb-lg-2 mb-3">
+              </div> */}
+              {/* <div className="row mb-lg-2 mb-3">
                 <div className="col small">
                   {
                     role.map((r, i) => (
@@ -209,8 +209,8 @@ const CreateUserModal = ({show, handleClose}) => {
                     ))
                   }
                 </div>
-              </div>
-              <div className="row mb-3">
+              </div> */}
+              {/* <div className="row mb-3">
                 <div className="col-lg-4 mb-lg-0 mb-2">
                   <div className="small"></div>
                   <input 
@@ -243,8 +243,8 @@ const CreateUserModal = ({show, handleClose}) => {
                     value={formData.confirm_password}
                   />
                 </div>
-              </div>
-              {/* <div className="row mb-3">
+              </div> */}
+              <div className="row mb-3">
                 <div className="col">
                   <div className="row">
                     <div className="col">
@@ -255,7 +255,7 @@ const CreateUserModal = ({show, handleClose}) => {
                     {
                       Array.from({length: 12}).map((_, i) => (
                         <div 
-                          className="col-lg-3 col-md-4 col-6 mb-2" 
+                          className="col-lg-4 col-md-6 col-6 mb-2" 
                           key={i}
                         >
                           <div className="form-check">
@@ -277,7 +277,7 @@ const CreateUserModal = ({show, handleClose}) => {
                     }
                   </div>
                 </div>
-              </div>               */}
+              </div>              
               <div className="row">
                 <div className="col text-center">
                   <button className="btn btn-sm btn-warning w-25">Submit</button>
@@ -291,4 +291,4 @@ const CreateUserModal = ({show, handleClose}) => {
   )
 }
 
-export default CreateUserModal
+export default CreateRoleModal

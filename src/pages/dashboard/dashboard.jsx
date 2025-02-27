@@ -13,6 +13,9 @@ import Suppliers from '../purchaseOrder/supplier/suppliers'
 import ProjectAndClientsLayout from '../projectsAndClients/layout'
 import Project from '../projectsAndClients/project/project'
 import Clients from '../projectsAndClients/clients/clients'
+import RoleList from '../settings/role/roleList'
+import StatusList from '../settings/status/statusList'
+import Profile from '../settings/profile/profile'
 
 const components = {
   overview: <Overview />,
@@ -23,7 +26,10 @@ const components = {
   supplier: <Suppliers />,
   projects: <ProjectAndClientsLayout />,
   project: <Project />,
-  clients: <Clients />
+  clients: <Clients />,
+  role: <RoleList />,
+  status: <StatusList />,
+  profile: <Profile />
 }
 
 const DashBoard = () => {
