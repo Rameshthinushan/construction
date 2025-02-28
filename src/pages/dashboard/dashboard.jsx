@@ -16,6 +16,7 @@ import Clients from '../projectsAndClients/clients/clients'
 import RoleList from '../settings/role/roleList'
 import StatusList from '../settings/status/statusList'
 import Profile from '../settings/profile/profile'
+import ClientList from '../projectsAndClients/clients/clientList'
 
 const components = {
   overview: <Overview />,
@@ -29,7 +30,8 @@ const components = {
   clients: <Clients />,
   role: <RoleList />,
   status: <StatusList />,
-  profile: <Profile />
+  profile: <Profile />,
+  clients: <ClientList/>
 }
 
 const DashBoard = () => {

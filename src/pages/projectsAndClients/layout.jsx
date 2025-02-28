@@ -26,7 +26,7 @@ import { Link } from 'react-router'
                   key={i}
                 >
                   <div className="w-100px mb-3 me-3">
-                    <div className="site-bg-compo site-border rounded-3 p-3 text-center h-100 zoom">
+                    <div className="site-bg-compo site-border rounded-3 p-3 text-center h-100 zoom shadow">
                       <div className="mb-2">
                         <img src={`assets/site-images/${pc.image}`} alt="" height={30}/>
                       </div>
