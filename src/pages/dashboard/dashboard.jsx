@@ -31,11 +31,11 @@ const components = {
   role: <RoleList />,
   status: <StatusList />,
   profile: <Profile />,
-  clients: <ClientList/>
+  // clients: <ClientList/>
 }
 
 const DashBoard = () => {
-  const {domin} = useParams()
+  const {domin, subdomin} = useParams()
   const url = (typeof domin == 'undefined')? 'onloding' : domin
   return (
     <div className="row">
@@ -49,7 +49,6 @@ const DashBoard = () => {
         </div>
         <div className="row d-lg-none">
           <div className="col">
-            
             <MobileLayouts
               domin={domin}
             />

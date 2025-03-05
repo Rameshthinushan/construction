@@ -1,17 +1,26 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import CreateRoleModal from "./createRoleModal";
+import Request from "../../../api";
+
+import { useSelector } from "react-redux";
 
 const RoleList = () => {
   const [loding, setLoding] = useState(true)
   const [modalShow, setModalShow] = useState(false);
 
+  const configration = useSelector((state) => state.configration.value)
+  const role = configration.role;
+  // console.log(thinu)
+
   const handleClose = () => setModalShow(false);
   const handleShow = () => setModalShow(true);
 
+
   setTimeout(() => {
     setLoding(false)
-  }, 3000);
+  }, 500);
   
+  // console.table(roleData);
   return (
     <div className="row">
       <div className="col">
@@ -42,13 +51,19 @@ const RoleList = () => {
                       <div className="col-lg-1">
                         <input type="checkbox" name="" id="" className="form-check-input"/>
                       </div>
-                      <div className="col-lg-4">Role</div>
-                      <div className="col-lg-3">Create By</div>
-                      <div className="col-lg-2">Status</div>
+                      <div className="col-lg-6">Role</div>
+                      {/* <div className="col-lg-3">Create By</div> */}
+                      <div className="col-lg-3">Status</div>
                       <div className="col-lg-2">Action</div>
                     </div>
                   </li>
-                  {(loding)? <Spinner/> : <RoleTable/>}
+                  {
+                    (loding)
+                      ? <Spinner/> 
+                      : <RoleTable
+                          data={role}
+                        />
+                  }
                 </ul>
               </div>
             </div>
@@ -57,6 +72,7 @@ const RoleList = () => {
         <CreateRoleModal 
           show={modalShow}
           handleClose={handleClose}
+          permission={configration.permission}
         />
       </div>
     </div>
@@ -77,24 +93,27 @@ const Spinner = () => {
   )
 }
 
-const RoleTable = () => {
+const RoleTable = ({data}) => {
   return (
     <>
       {
-        Array.from({ length: 12 }).map((_, index) => (
-          <li className="border-bottom pt-2 pb-2 ps-3 bg-white">
+        data.map((r, i) => (
+          <li 
+            className="border-bottom pt-2 pb-2 ps-3 bg-white"
+            key={i}
+          >
             <div className="row">
               <div className="col-lg-1">
                 <input type="checkbox" name="" id="" className="form-check-input"/>
               </div>
-              <div className="col-lg-4">Ramesh Thinushan</div>
-              <div className="col-lg-3">
+              <div className="col-lg-6">{r.text}</div>
+              {/* <div className="col-lg-3">
                 <div>#001</div>
                 <div className="small nav-font-color">thinu@gamil.com</div>
                 <div className="small nav-font-color">077xxxxxxx</div>
-              </div>
-              <div className="col-lg-2">
-                <i className="bi bi-circle-fill text-success"></i>
+              </div> */}
+              <div className="col-lg-3">
+                <i className={"bi bi-circle-fill text-success"}></i>
               </div>
               <div className="col-lg-2">
                 <button className="btn btn-sm btn-primary me-2">
