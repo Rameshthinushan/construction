@@ -7,13 +7,18 @@ import { useSelector } from "react-redux";
 const RoleList = () => {
   const [loding, setLoding] = useState(true)
   const [modalShow, setModalShow] = useState(false);
+  const [updateRoleId, setUpdateRoleId] = useState('');
 
-  const configration = useSelector((state) => state.configration.value)
+  const configration = useSelector((state) => state.configration.value);
   const role = configration.role;
-  // console.log(thinu)
-
   const handleClose = () => setModalShow(false);
   const handleShow = () => setModalShow(true);
+
+  const setUpadteData = (id) => {
+    setUpdateRoleId(id)
+    setModalShow(true)
+  }
+
 
 
   setTimeout(() => {
@@ -52,7 +57,6 @@ const RoleList = () => {
                         <input type="checkbox" name="" id="" className="form-check-input"/>
                       </div>
                       <div className="col-lg-6">Role</div>
-                      {/* <div className="col-lg-3">Create By</div> */}
                       <div className="col-lg-3">Status</div>
                       <div className="col-lg-2">Action</div>
                     </div>
@@ -62,6 +66,7 @@ const RoleList = () => {
                       ? <Spinner/> 
                       : <RoleTable
                           data={role}
+                          setRoleId={setUpadteData}
                         />
                   }
                 </ul>
@@ -73,6 +78,7 @@ const RoleList = () => {
           show={modalShow}
           handleClose={handleClose}
           permission={configration.permission}
+          roleId={updateRoleId}
         />
       </div>
     </div>
@@ -93,7 +99,7 @@ const Spinner = () => {
   )
 }
 
-const RoleTable = ({data}) => {
+const RoleTable = ({data, setRoleId}) => {
   return (
     <>
       {
@@ -107,11 +113,6 @@ const RoleTable = ({data}) => {
                 <input type="checkbox" name="" id="" className="form-check-input"/>
               </div>
               <div className="col-lg-6">{r.text}</div>
-              {/* <div className="col-lg-3">
-                <div>#001</div>
-                <div className="small nav-font-color">thinu@gamil.com</div>
-                <div className="small nav-font-color">077xxxxxxx</div>
-              </div> */}
               <div className="col-lg-3">
                 <i className={"bi bi-circle-fill text-success"}></i>
               </div>
@@ -119,7 +120,10 @@ const RoleTable = ({data}) => {
                 <button className="btn btn-sm btn-primary me-2">
                   <i className="bi bi-eye-fill"></i>
                 </button>
-                <button className="btn btn-sm btn-warning me-2">
+                <button 
+                  className="btn btn-sm btn-warning me-2"
+                  onClick={() => setRoleId(r.id)}
+                >
                   <i className="bi bi-pencil-fill"></i>
                 </button>
                 <button className="btn btn-sm btn-danger">

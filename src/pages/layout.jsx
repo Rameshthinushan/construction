@@ -8,37 +8,37 @@ import Request from '../api'
 
 const Layout = () => {
   const dispatch = useDispatch()
+  const [loding, Setloding] = useState(false)
   useEffect(() => {
     Request({
       url: '/configs'
     }).then((res) => {
-      // const {}  
-      //console.log(res.labor_rates)
-
-      //if (res.message == 'SUCCESS') {
-        console.log('workign')
+      console.log(res.status)
+      if (res.status === 200) {
         dispatch(setConfigration(res));
-      //}
+        Setloding(true)
+      }
     }).catch((e) => {
       console.log("Error fetching roles:", e);
     });
   }, []);
 
-  // useEffect(() => {
-  //   Request({
-  //     url: `/get-roles`
-  //   }).then((res) => {
-  //     if(res.message === 'Success') {
-  //       dispatch(setAllRoles(res.roles))
-  //     }
-  //   }).catch((e) => (
-  //     console.log(e)
-  //   ))
-  // }, [])
-
   return (
     <div className="container-fluid">
-      <DashBoard/>
+      {
+        (loding)? <DashBoard/> : <LodingTemplate/>
+      }
+      
+    </div>
+  )
+}
+
+const LodingTemplate = () => {
+  return (
+    <div className="row">
+      <div className="col">
+        Loding...
+      </div>
     </div>
   )
 }
