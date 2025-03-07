@@ -157,3 +157,8 @@ body {
 .add-new-line-btn {
   border: #aeb4b7 1px dashed !important;
 }
+
+.site-error {
+  font-size: 11px;
+  color: #dc3545 !important;
+}

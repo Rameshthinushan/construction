@@ -2,7 +2,7 @@ import axios from "axios";
 
 const Request = async(data) => {
   const REQUEST_URL = 'http://127.0.0.1:8000/api';
-  const TOKEN = `e713f833781b7737f55772f709e3d59f`;
+  const TOKEN = `3e721f9c386d71b096813f41ff0f3825`;
 
   let headers = {
     'Cache-Control': 'no-cache',

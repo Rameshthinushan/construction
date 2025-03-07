@@ -3,10 +3,10 @@ import { Link } from 'react-router'
 
 const SettingsLayouts = () => {
   const [settingList, setSettingList] = useState([{
-      to: "/profile",
-      image: "profile.png",
-      text: "Profile", 
-      show: true
+    to: "/profile",
+    image: "profile.png",
+    text: "Profile", 
+    show: true
   },{
     to: "/user",
     image: "group.png",
@@ -36,8 +36,12 @@ const SettingsLayouts = () => {
         <div className="d-flex flex-wrap">
           {
             settingList.map((sl, i) => (
-              <Link to={sl.to} className="text-decoration-none">
-                <div className="w-100px mb-3 me-3" key={i}>
+              <Link 
+                to={sl.to} 
+                className="text-decoration-none"
+                key={i}
+              >
+                <div className="w-100px mb-3 me-3">
                   <div className="site-bg-compo site-border rounded-3 p-3 text-center h-100 zoom shadow">
                     <div className="mb-2">
                       <img src={`assets/site-images/${sl.image}`} alt="" height={30}/>
