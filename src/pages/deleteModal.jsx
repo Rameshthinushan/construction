@@ -21,7 +21,7 @@ export const DeleteModal = ({show, handleClose, deleteId, modalData}) => {
             </div>
             <div className="row mb-3">
               <div className="col">
-                <div className="">{modalData.body}</div>
+                <div className="fs-5 fw-medium mb-2">{modalData.body}</div>
                 {modalData.description && <div className="nav-font-color">{modalData.description}</div>}
               </div>
             </div>

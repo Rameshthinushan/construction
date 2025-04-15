@@ -25,6 +25,18 @@ body {
   font-family: "Roboto", serif !important;
 }
 
+.site-user-image {
+  width: 82%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.site-user-close {
+  position: absolute;
+  top: 0%;
+  left: 14%;
+}
+
 .table-header {
   background: var(--color-purple) !important;
   color: var(--nav-active-font-color);

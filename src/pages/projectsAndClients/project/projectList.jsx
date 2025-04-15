@@ -1,27 +1,16 @@
-import { useState, useEffect } from "react"
-import CreateUserModal from "./createUserModal";
-import Request from "../../../api";
+import { useState } from "react"
+import CreateProjectModal from "./createProjectModal";
 
-const UserList = () => {
+const ProjectList = () => {
   const [loding, setLoding] = useState(true)
   const [modalShow, setModalShow] = useState(false);
-  const [user, setUser] = useState([]);
 
   const handleClose = () => setModalShow(false);
   const handleShow = () => setModalShow(true);
 
-  useEffect(() => {
-    Request({
-      url: '/get-users'
-    }).then ((res) => {
-      if (res.message === 'Success') {
-        setUser(res.users)
-        setLoding(false)
-      }
-    }).catch(() => {
-
-    })
-  }, [])
+  setTimeout(() => {
+    setLoding(false)
+  }, 3000);
   
   return (
     <div className="row">
@@ -32,7 +21,7 @@ const UserList = () => {
               className="btn btn-warning"
               onClick={() => setModalShow(true)}
             >
-              <i className="bi bi-plus-circle-fill me-2"></i>Create New user
+              <i className="bi bi-plus-circle-fill me-2"></i>Create New Client
             </button>
           </div>
         </div>
@@ -53,22 +42,19 @@ const UserList = () => {
                       <div className="col-lg-1">
                         <input type="checkbox" name="" id="" className="form-check-input"/>
                       </div>
-                      <div className="col-lg-2">User Name</div>
-                      <div className="col-lg-3">User Details</div>
-                      <div className="col-lg-2">User Role</div>
+                      <div className="col-lg-2">Client Name</div>
+                      <div className="col-lg-5">Client Details</div>
                       <div className="col-lg-2">Active Status</div>
                       <div className="col-lg-2">Action</div>
                     </div>
                   </li>
-                  {
-                    (loding)? <Spinner/> : <UserTable user={user}/>
-                    }
+                  {(loding)? <Spinner/> : <ClientTable/>}
                 </ul>
               </div>
             </div>
           </div>
         </div>
-        <CreateUserModal 
+        <CreateProjectModal 
           show={modalShow}
           handleClose={handleClose}
         />
@@ -91,26 +77,22 @@ const Spinner = () => {
   )
 }
 
-const UserTable = ({user}) => {
+const ClientTable = () => {
   return (
     <>
       {
-        user.map((user, i) => (
-          <li 
-            className="border-bottom pt-2 pb-2 ps-3 bg-white"
-            key={i}
-          >
+        Array.from({ length: 12 }).map((_, index) => (
+          <li className="border-bottom pt-2 pb-2 ps-3 bg-white">
             <div className="row">
               <div className="col-lg-1">
                 <input type="checkbox" name="" id="" className="form-check-input"/>
               </div>
-              <div className="col-lg-2">{user.firstname} {user.lastname}</div>
-              <div className="col-lg-3">
-                <div>#{user.id}</div>
-                <div className="small nav-font-color">{user.email ?? '#NA'}</div>
-                <div className="small nav-font-color">{user.phone?? '#NA'}</div>
+              <div className="col-lg-2">Ramesh Thinushan</div>
+              <div className="col-lg-5">
+                <div>#001</div>
+                <div className="small nav-font-color">thinu@gamil.com</div>
+                <div className="small nav-font-color">077xxxxxxx</div>
               </div>
-              <div className="col-lg-2">{user.role.text}</div>
               <div className="col-lg-2">
                 <i className="bi bi-circle-fill text-success"></i>
               </div>
@@ -133,5 +115,5 @@ const UserTable = ({user}) => {
   )
 
 }
-export default UserList
+export default ProjectList
 
