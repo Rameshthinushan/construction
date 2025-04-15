@@ -11,9 +11,9 @@ const InventoryLayout = () => {
     text: 'Plants',
     image: 'supplier.png',
   }, {
-    to: '/supplier',
+    to: '/tools',
     text: 'Tools',
-    image: 'supplier.png',
+    image: 'support.png',
   }])
 
   return (

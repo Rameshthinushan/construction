@@ -18,6 +18,7 @@ import ClientList from '../projectsAndClients/clients/clientList'
 import  InventoryLayout  from '../inventory/inventoryLayout'
 import ProjectList from '../projectsAndClients/project/projectList'
 import ReportsLayout from '../reports/reportsLayout'
+import Tools from '../inventory/tools/tools'
 
 const components = {
   overview: <Overview />,
@@ -33,7 +34,8 @@ const components = {
   status: <StatusList />,
   profile: <Profile />,
   inventory: <InventoryLayout />,
-  reports: <ReportsLayout/>
+  reports: <ReportsLayout/>,
+  tools: <Tools/>,
   // clients: <ClientList/>
 }
 
