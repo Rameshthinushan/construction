@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import CreatePurchaseOrderModal from './createPurchaseOrderModal';
+import CreateToolsModal from './createToolModal';
 import { useSelector } from 'react-redux';
 
 const Tools = () => {
@@ -35,7 +35,7 @@ const Tools = () => {
           <div className="col">
             <button 
               className="btn btn-warning"
-              onClick={() => getUnitDetails(2)}
+              onClick={() => setModalShow(true)}
             >
               <i className="bi bi-plus-circle-fill me-2"></i>Create New Tools
             </button>
@@ -66,16 +66,23 @@ const Tools = () => {
                       <div className="col-lg-2">Action</div>
                     </div>
                   </li>
-                  {(loding)? <Spinner/> : < PurchaseOrderTable tools={tools} unit={getUnitDetails}/>}
+                  {
+                    (loding)? 
+                      <Spinner/> : 
+                      < PurchaseOrderTable 
+                        tools={tools} 
+                        unit={getUnitDetails}
+                      />}
                 </ul>
               </div>
             </div>
           </div>
         </div>
 
-        <CreatePurchaseOrderModal 
+        <CreateToolsModal 
           show={modalShow}
           handleClose={handleClose}
+          unitsData={units}
         />
       </div>
     </div>
