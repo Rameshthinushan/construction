@@ -120,9 +120,13 @@ export const PurchaseOrderTable = ({tools, unit}) => {
               <div className="col-lg-3">
                 <div>{tool.tool_name}</div>
               </div>
-              <div className="col-lg-2">{unit(tool?.rates).unit.name}</div>
+              <div className="col-lg-2">{
+              // unit(tool?.rates).unit.name
+              }</div>
               <div className="col-lg-2">
-                {unit(tool?.rates).rate.toFixed(2)}
+                {
+                // unit(tool?.rates).rate
+                }
               </div>
               <div className="col-lg-1">
                 <i className="bi bi-circle-fill text-success"></i>
