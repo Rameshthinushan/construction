@@ -11,12 +11,14 @@ const configrationSlice = createSlice({
     },
     updateRole: (state, action) => {
       const index = state.value.role.findIndex((data) => data.id === action.payload.role.id)
-      console.log(state.value.role[index])
       state.value.role[index] = action.payload.role
     },
+    setNewTool: (state, action) => {
+      state.value.tool_rates.push(action.payload)
+    }
   }
 })
 
 
-export const { setConfigration,  updateRole } = configrationSlice.actions
+export const { setConfigration,  updateRole, setNewTool } = configrationSlice.actions
 export default configrationSlice.reducer

@@ -11,12 +11,14 @@ import PurchaseOrderLayout from '../purchaseOrder/purchaseOrderLayout'
 import PurchaseOrder from '../purchaseOrder/po/purchaseOrder'
 import Suppliers from '../purchaseOrder/supplier/suppliers'
 import ProjectAndClientsLayout from '../projectsAndClients/layout'
-import Project from '../projectsAndClients/project/project'
-import Clients from '../projectsAndClients/clients/clients'
 import RoleList from '../settings/role/roleList'
 import StatusList from '../settings/status/statusList'
 import Profile from '../settings/profile/profile'
 import ClientList from '../projectsAndClients/clients/clientList'
+import  InventoryLayout  from '../inventory/inventoryLayout'
+import ProjectList from '../projectsAndClients/project/projectList'
+import ReportsLayout from '../reports/reportsLayout'
+import Tools from '../inventory/tools/tools'
 
 const components = {
   overview: <Overview />,
@@ -26,11 +28,14 @@ const components = {
   po: <PurchaseOrder />,
   supplier: <Suppliers />,
   projects: <ProjectAndClientsLayout />,
-  project: <Project />,
-  clients: <Clients />,
+  project: <ProjectList />,
+  clients: <ClientList />,
   role: <RoleList />,
   status: <StatusList />,
   profile: <Profile />,
+  inventory: <InventoryLayout />,
+  reports: <ReportsLayout/>,
+  tools: <Tools/>,
   // clients: <ClientList/>
 }
 

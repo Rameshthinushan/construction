@@ -1,27 +1,32 @@
-import { useState, useEffect } from "react"
-import CreateUserModal from "./createUserModal";
-import Request from "../../../api";
+import React, { useState, useEffect } from 'react'
+import CreateToolsModal from './createToolModal';
+import { useSelector } from 'react-redux';
 
-const UserList = () => {
+const Tools = () => {
   const [loding, setLoding] = useState(true)
   const [modalShow, setModalShow] = useState(false);
-  const [user, setUser] = useState([]);
+
+  const configration = useSelector((state) => state.configration.value);
+  const units = configration.units;
+  const tools = configration.tool_rates;
 
   const handleClose = () => setModalShow(false);
   const handleShow = () => setModalShow(true);
 
-  useEffect(() => {
-    Request({
-      url: '/get-users'
-    }).then ((res) => {
-      if (res.message === 'Success') {
-        setUser(res.users)
-        setLoding(false)
-      }
-    }).catch(() => {
+  const getUnitDetails = (obj) => {
+    const [unitId] = Object.keys(obj);
+    return {
+      unit: units.find(u => u.id == unitId),
+      rate: obj[unitId]
+    };
+  };
 
-    })
-  }, [])
+  useEffect(() => {
+    if (tools) {
+      setLoding(false)
+    }
+  }, [tools])
+
   
   return (
     <div className="row">
@@ -32,7 +37,7 @@ const UserList = () => {
               className="btn btn-warning"
               onClick={() => setModalShow(true)}
             >
-              <i className="bi bi-plus-circle-fill me-2"></i>Create New user
+              <i className="bi bi-plus-circle-fill me-2"></i>Create New Tools
             </button>
           </div>
         </div>
@@ -42,7 +47,7 @@ const UserList = () => {
             <div className="row">
               <div className="col-8"></div>
               <div className="col">
-                <input type="text" className="form-control form-control-sm p-3" placeholder="Search Your User"/>
+                <input type="text" className="form-control form-control-sm p-3" placeholder="Search Your Supplier"/>
               </div>
             </div>
             <div className="row mt-3">
@@ -53,31 +58,38 @@ const UserList = () => {
                       <div className="col-lg-1">
                         <input type="checkbox" name="" id="" className="form-check-input"/>
                       </div>
-                      <div className="col-lg-2">User Name</div>
-                      <div className="col-lg-3">User Details</div>
-                      <div className="col-lg-2">User Role</div>
-                      <div className="col-lg-2">Active Status</div>
+                      <div className="col-lg-1">Tool Code</div>
+                      <div className="col-lg-3">Tools Name</div>
+                      <div className="col-lg-2">Units</div>
+                      <div className="col-lg-2">Rates</div>
+                      <div className="col-lg-1">Status</div>
                       <div className="col-lg-2">Action</div>
                     </div>
                   </li>
                   {
-                    (loding)? <Spinner/> : <UserTable user={user}/>
-                    }
+                    (loding)? 
+                      <Spinner/> : 
+                      < PurchaseOrderTable 
+                        tools={tools} 
+                        unit={getUnitDetails}
+                      />}
                 </ul>
               </div>
             </div>
           </div>
         </div>
-        <CreateUserModal 
+
+        <CreateToolsModal 
           show={modalShow}
           handleClose={handleClose}
+          unitsData={units}
         />
       </div>
     </div>
   )
 }
 
-const Spinner = () => {
+export const Spinner = () => {
   return (
     <li className="site-border-bottom pt-2 pb-2">
       <div className="row">
@@ -91,37 +103,39 @@ const Spinner = () => {
   )
 }
 
-const UserTable = ({user}) => {
+export const PurchaseOrderTable = ({tools, unit}) => {
   return (
     <>
       {
-        user.map((user, i) => (
+        tools.map((tool, i) => (
           <li 
             className="border-bottom pt-2 pb-2 ps-3 bg-white"
             key={i}
           >
-            <div className="row">
+            <div className="row align-items-center">
               <div className="col-lg-1">
                 <input type="checkbox" name="" id="" className="form-check-input"/>
               </div>
-              <div className="col-lg-2">{user.firstname} {user.lastname}</div>
+              <div className="col-lg-1">{tool.tool_code}</div>
               <div className="col-lg-3">
-                <div>#{user.id}</div>
-                <div className="small nav-font-color">{user.email ?? '#NA'}</div>
-                <div className="small nav-font-color">{user.phone?? '#NA'}</div>
+                <div>{tool.tool_name}</div>
               </div>
-              <div className="col-lg-2">{user.role.text}</div>
+              <div className="col-lg-2">{
+              // unit(tool?.rates).unit.name
+              }</div>
               <div className="col-lg-2">
+                {
+                // unit(tool?.rates).rate
+                }
+              </div>
+              <div className="col-lg-1">
                 <i className="bi bi-circle-fill text-success"></i>
               </div>
               <div className="col-lg-2">
-                <button className="btn btn-sm btn-primary me-2">
-                  <i className="bi bi-eye-fill"></i>
-                </button>
-                <button className="btn btn-sm btn-warning me-2">
+                <button className="btn btn-sm btn-outline-secondary me-2">
                   <i className="bi bi-pencil-fill"></i>
                 </button>
-                <button className="btn btn-sm btn-danger">
+                <button className="btn btn-sm btn-outline-danger me-2">
                   <i className="bi bi-trash-fill"></i>
                 </button>
               </div>
@@ -131,7 +145,6 @@ const UserTable = ({user}) => {
       }
     </>
   )
-
 }
-export default UserList
 
+export default Tools
