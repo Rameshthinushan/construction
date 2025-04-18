@@ -18,7 +18,7 @@ const CreateToolsModal = ({ show, handleClose, unitsData }) => {
   useEffect(() => {
     if (show) {
       Request({
-        url: '/get-next-toolcode'
+        url: '/get-next-toolcode' // get-next-code new api end point please change it daw
       })
       .then((res) => {
         setFormData((prev) => ({

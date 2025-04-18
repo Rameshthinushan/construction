@@ -13,11 +13,8 @@ const Layout = () => {
     Request({
       url: '/configs'
     }).then((res) => {
-      console.log(res.status)
-      //if (res.status === 200) {
-        dispatch(setConfigration(res));
-        Setloding(true)
-      //}
+      dispatch(setConfigration(res));
+      Setloding(true)
     }).catch((e) => {
       console.log("Error fetching roles:", e);
     });
