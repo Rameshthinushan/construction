@@ -5,7 +5,7 @@ import Request from '../../../api';
 import { useDispatch } from 'react-redux';
 import {setNewTool} from '../../../features/configration'; 
 
-const CreateToolsModal = ({ show, handleClose, unitsData }) => {
+const CreatePlantModal = ({ show, handleClose, unitsData }) => {
   const dispatch = useDispatch();
   const [formData, setFormData] = useState({
     tool_code: '',
@@ -20,7 +20,7 @@ const CreateToolsModal = ({ show, handleClose, unitsData }) => {
       Request({
         url: '/get-next-code',
         body: {
-          type: 'tool'
+          type: 'plant'
         }
       })
       .then((res) => {
@@ -108,7 +108,7 @@ const CreateToolsModal = ({ show, handleClose, unitsData }) => {
               noValidate
             >
               <div className="row mb-3">
-                <div className="col-3 fw-medium">Tool code:</div>
+                <div className="col-3 fw-medium">Plant code:</div>
                 <div className="col text-secondary">{formData.tool_code}</div>
               </div>
 
@@ -117,7 +117,7 @@ const CreateToolsModal = ({ show, handleClose, unitsData }) => {
                   <input
                     type="text"
                     className="form-control form-control-sm p-2"
-                    placeholder="Tool Name"
+                    placeholder="Plant Name"
                     name="tool_name"
                     value={formData.tool_name}
                     onChange={handleOnChange}
@@ -144,7 +144,7 @@ const CreateToolsModal = ({ show, handleClose, unitsData }) => {
                   <input
                     type="text"
                     className="form-control form-control-sm p-2"
-                    placeholder="Tool Rate"
+                    placeholder="Plant Rate"
                     name="rate"
                     value={formData.rate}
                     onChange={handleOnChange}
@@ -169,4 +169,4 @@ const CreateToolsModal = ({ show, handleClose, unitsData }) => {
   );
 };
 
-export default CreateToolsModal;
+export default CreatePlantModal;

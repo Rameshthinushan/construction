@@ -7,6 +7,8 @@ import Overview from '../overview/overview'
 import SettingsLayouts from '../settings/settingsLayouts'
 import UserList from '../settings/user/userList'
 import FirstScreenView from "./mobileDashboard"
+import Profile from '../settings/profile/profile'
+import RoleList from '../settings/role/roleList'
 
 import list from "./listitems"
 
@@ -15,7 +17,9 @@ function MobileLayouts({domin}) {
     onloding: <FirstScreenView />,
     overview: <Overview />,
     settings: <SettingsLayouts />,
-    user: <UserList />
+    user: <UserList />,
+    profile: <Profile />,
+    role: <RoleList/>
   }
   
   const [relativePath , setRelativePath] = useState()
@@ -47,7 +51,7 @@ const MobileNavigation = ({url}) => {
   return (
     <>
       <div className="row sticky-top">
-        <div className="bg-white col m-2 p-3 rounded-2 shadow">
+        <div className="bg-white col m-2 p-3 rounded-2 shadow mobile-nav-border">
           <div className="d-flex justify-content-between">
             {
               list.map((i, k) => (
