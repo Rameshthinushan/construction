@@ -15,10 +15,14 @@ const configrationSlice = createSlice({
     },
     setNewTool: (state, action) => {
       state.value.tool_rates.push(action.payload)
-    }
+    },
+    updateTool: (state, action) => {
+      const index = state.value.tool_rates.findIndex((data) => data.id === action.payload.id)
+      state.value.tool_rates[index] = action.payload
+    },
   }
 })
 
 
-export const { setConfigration,  updateRole, setNewTool } = configrationSlice.actions
+export const { setConfigration,  updateRole, setNewTool, updateTool } = configrationSlice.actions
 export default configrationSlice.reducer

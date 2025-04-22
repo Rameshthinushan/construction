@@ -35,6 +35,10 @@ const RoleList = () => {
     setRoleId("")
     setModalShow(true)
   }
+
+  const actionDelete = () => {
+    
+  }
   
   
   return (
@@ -99,13 +103,13 @@ const RoleList = () => {
         <DeleteModal
           show={deleteModalStatus}
           handleClose={() => setDelateModalStatus(false)}
-          deleteId={roleId}
           modalData={{
             id: roleId,
             title: 'Delete',
             body: 'Are you sure you want to delete this role?',
             description: 'If you click the delete button, you can permanently delete your role.'
           }}
+          action={actionDelete}
         />
         
       </div>

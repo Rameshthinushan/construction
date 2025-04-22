@@ -1,6 +1,6 @@
 import { Modal } from "react-bootstrap";
 
-export const DeleteModal = ({show, handleClose, deleteId, modalData}) => {
+export const DeleteModal = ({show, handleClose, modalData, action}) => {
   console.log(modalData);
   return (
     <Modal 
@@ -29,7 +29,8 @@ export const DeleteModal = ({show, handleClose, deleteId, modalData}) => {
               <div className="col text-end">
                 <button 
                   className="btn btn-sm btn-danger me-2 w-25"
-                  onClick={() => handleClose()}
+                  onClick={action(modalData.id)}
+                  type="button"
                 >Delete</button>
                 <button 
                   className="btn btn-sm btn-secondary w-25"

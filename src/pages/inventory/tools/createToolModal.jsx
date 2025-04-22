@@ -2,36 +2,69 @@ import { Modal } from 'react-bootstrap';
 import { useState, useEffect } from 'react';
 import Select from 'react-select';
 import Request from '../../../api';
-import { useDispatch } from 'react-redux';
-import {setNewTool} from '../../../features/configration'; 
+import { useSelector, useDispatch } from 'react-redux';
+import {setNewTool, updateTool} from '../../../features/configration'; 
 
-const CreateToolsModal = ({ show, handleClose, unitsData }) => {
+const CreateToolsModal = ({ show, handleClose, unitsData, toolid }) => {
   const dispatch = useDispatch();
+  const toolDetails = useSelector((state) => state.configration.value.tool_rates);
+  const [validate, setValidate] = useState(false);
   const [formData, setFormData] = useState({
+    id: "",
     tool_code: '',
     tool_name: '',
     unit: '',
     rate: ''
   });
 
-  const [validate, setValidate] = useState(false);
   useEffect(() => {
-    if (show) {
+    setValidate(false);
+  }, [show])
+  
+  useEffect(() => {
+    if (toolid === "") {
       Request({
         url: '/get-next-code',
         body: {
           type: 'tool'
         }
-      })
-      .then((res) => {
+      }).then((res) => {
         setFormData((prev) => ({
           ...prev,
           tool_code: res.code
         }));
-      })
-      .catch(() => {});
+      }).catch(() => {});
     }
   }, [show]);
+
+  useEffect(() => {
+    if (!toolid) {
+      setFormData({
+        id: "",
+        tool_code: "",
+        tool_name: "",
+        unit: '',
+        rate: '',
+      });
+      return;
+    }
+  
+    const updateTool = toolDetails.find(({ id }) => id === toolid);
+
+    if (!updateTool) return;
+
+    const unit = Object.keys(updateTool.rates)[0];
+    setFormData({
+      id: updateTool.id,
+      tool_code: updateTool.tool_code,
+      tool_name: updateTool.tool_name,
+      unit: unit,
+      rate: updateTool.rates[unit]
+    });
+    console.log(formData);
+  }, [toolid, show]);
+
+  
 
   const options = unitsData.map((unit) => ({
     value: String(unit.id),
@@ -54,46 +87,36 @@ const CreateToolsModal = ({ show, handleClose, unitsData }) => {
   };
 
 
-  const createNewTool = (e) => {
+  const createAndUpdateTool = (e) => {
     e.preventDefault();
     e.stopPropagation();
     setValidate(true);
+  
+    if (!formData.tool_name || formData.units.length === 0) return;
+  
+    const isUpdate = !!formData.id;
+    const url = isUpdate ? '/update-tool' : '/create-tool';
+  
+    const payload = { ...formData };
+    if (!isUpdate) delete payload.id;
+  
+    Request({ 
+      url, 
+      body: payload 
+    }).then((res) => {
+      if (!res.message) return;
 
-    // Example: basic front-end validation
-    if (formData.tool_name && formData.unit) {
-      Request({
-        url: '/create-tool',
-        body: formData,
-      }).then ((res) => {
-        if (res.message) {
-          const rate =  res.tool_rate.rate
-          const obj = {
-            "tool_code": res.tool_rate.tool_code,
-            "tool_name":  res.tool_rate.tool_name,
-            "rates": {
-              [rate]: res.tool_rate.unit
-            },
-            "id": res.tool_rate.id
-          }
-          console.log(obj)
-          dispatch(setNewTool(obj));
-          handleClose();
-        }
-      }).catch(() => {
-        
-      })
-      // const res = {
-      //   "tool_code": "T-005",
-      //   "tool_name": "new Tets",
-      //   "rates": {
-      //     2: 0
-      //   },
-      //   "id": 5
-      // }
-      // dispatch(setNewTool(res));
-      // console.log('Submit data:', formData);
-      // You can now call your API to save the tool
-    }
+      const tool = res.tool_rate;
+      const rates = { [tool.unit]: tool.rate };
+      const obj = {
+        tool_code: tool.tool_code,
+        tool_name: tool.tool_name,
+        rates,
+        id: tool.id,
+      };
+      isUpdate ? dispatch(updateTool(obj)) : dispatch(setNewTool(obj));
+      handleClose();
+    }).catch(() => {});
   };
 
   return (
@@ -103,7 +126,7 @@ const CreateToolsModal = ({ show, handleClose, unitsData }) => {
         <div className="row">
           <div className="col">
             <form
-              onSubmit={createNewTool}
+              onSubmit={createAndUpdateTool}
               className={`needs-validation ${validate ? 'was-validated' : ''}`}
               noValidate
             >
@@ -129,12 +152,14 @@ const CreateToolsModal = ({ show, handleClose, unitsData }) => {
 
               <div className="row mb-3">
                 <div className="col">
-                  <Select
-                    options={options}
-                    placeholder="Select Unit"
-                    onChange={handleUnitChange}
-                    className={validate && !formData.unit ? 'is-invalid' : ''}
-                  />
+                  {console.log(formData.unit)}
+                <Select
+                  options={options}
+                  value={options.find((opt) => opt.value === formData.unit) || null}
+                  placeholder="Select Unit"
+                  onChange={handleUnitChange}
+                  className={validate && !formData.unit ? 'is-invalid' : ''}
+                />
                   {validate && !formData.unit && (
                     <div className="invalid-feedback d-block">Please select a unit.</div>
                   )}
