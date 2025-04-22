@@ -7,7 +7,7 @@ const InventoryLayout = () => {
     text: 'Material',
     image: 'checkout.png',
   }, {
-    to: '/supplier',
+    to: '/plant',
     text: 'Plants',
     image: 'supplier.png',
   }, {

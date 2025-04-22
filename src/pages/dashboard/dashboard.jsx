@@ -19,6 +19,8 @@ import  InventoryLayout  from '../inventory/inventoryLayout'
 import ProjectList from '../projectsAndClients/project/projectList'
 import ReportsLayout from '../reports/reportsLayout'
 import Tools from '../inventory/tools/tools'
+import Plants from '../inventory/plant/plant'
+import ProjectReport from '../reports/projectReport'
 
 const components = {
   overview: <Overview />,
@@ -36,6 +38,8 @@ const components = {
   inventory: <InventoryLayout />,
   reports: <ReportsLayout/>,
   tools: <Tools/>,
+  plant: <Plants/>,
+  'project-report' : <ProjectReport />
   // clients: <ClientList/>
 }
 
@@ -179,7 +183,7 @@ const QuickNav = ({url}) => {
     show: true
   }, {
     to: '/inventory',
-    slug: ['inventory'],
+    slug: ['inventory', 'plant', 'tools'],
     text: 'Inventory',
     show: true
   }, {

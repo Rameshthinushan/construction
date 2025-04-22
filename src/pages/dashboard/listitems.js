@@ -16,21 +16,23 @@ const list = [{
   show: true
 }, {
   to: '/inventory',
-  slug: ['inventory'],
+  slug: ['inventory', 'plant', 'tools'],
   icon: 'bi-boxes',
   text: 'Invontary',
   tooltipText: 'Invontary',
   placement: 'right',
   show: true
-}, {
-  to: '/expanse',
-  slug: ['expanse'],
-  icon: 'bi-piggy-bank',
-  text: 'Expanse',
-  tooltipText: 'Expanse',
-  placement: 'right',
-  show: true
-}, {
+}, 
+// {
+//   to: '/expanse',
+//   slug: ['expanse'],
+//   icon: 'bi-piggy-bank',
+//   text: 'Expanse',
+//   tooltipText: 'Expanse',
+//   placement: 'right',
+//   show: true
+// },
+{
   to: '/to-do',
   slug: ['to-do'],
   icon: 'bi-ui-checks',
@@ -56,7 +58,7 @@ const list = [{
   show: true
 }, {
   to: '/reports',
-  slug: ['reports'],
+  slug: ['reports', 'project-report'],
   icon: 'bi-journal-text',
   text: 'Reports',
   tooltipText: 'Reports',
