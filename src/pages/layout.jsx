@@ -8,38 +8,44 @@ import Request from '../api'
 
 const Layout = () => {
   const dispatch = useDispatch()
-  const [loding, Setloding] = useState(false)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState("")
   useEffect(() => {
     Request({
       url: '/configs'
     }).then((res) => {
       dispatch(setConfigration(res));
-      Setloding(true)
+      setLoading(false)
     }).catch((e) => {
-      console.log("Error fetching roles:", e);
+      setError("Error fetching configuration: " + e?.response?.data?.message);
+      console.log("Error fetching roles:", e?.response?.data?.message);
     });
   }, []);
 
   return (
     <div className="container-fluid">
       {
-        (loding)? <DashBoard/> : <LodingTemplate/>
+        (loading) ? <LoadingTemplate error={error}/> : <DashBoard/>
       }
-      
     </div>
   )
 }
 
-const LodingTemplate = () => {
+const LoadingTemplate = ({ error }) => {
   return (
-    <div className="row">
-      <div className="col">
-        Loding...
+    <div class="d-flex justify-content-center align-items-center vh-100">
+      <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
       </div>
+      {error && (
+        <div class="ms-2">
+          <div className="text-danger">
+            {error}
+          </div>
+        </div>
+      )}
     </div>
   )
 }
-
-
 
 export default Layout

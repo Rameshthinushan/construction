@@ -15,37 +15,42 @@ import RoleList from '../settings/role/roleList'
 import StatusList from '../settings/status/statusList'
 import Profile from '../settings/profile/profile'
 import ClientList from '../projectsAndClients/clients/clientList'
-import  InventoryLayout  from '../inventory/inventoryLayout'
+import InventoryLayout from '../inventory/inventoryLayout'
 import ProjectList from '../projectsAndClients/project/projectList'
 import ReportsLayout from '../reports/reportsLayout'
 import Tools from '../inventory/tools/tools'
 import Plants from '../inventory/plant/plant'
 import ProjectReport from '../reports/projectReport'
+import DocumentsLayout from '../documents/documentsLayout'
+import Bsr from '../documents/bsr/bsr'
 
 const components = {
-  overview: <Overview />,
-  settings: <SettingsLayouts />,
-  user: <UserList />,
+  'overview': <Overview />,
+  'settings': <SettingsLayouts />,
+  'user': <UserList />,
   'purchase-order':<PurchaseOrderLayout />,
-  po: <PurchaseOrder />,
-  supplier: <Suppliers />,
-  projects: <ProjectAndClientsLayout />,
-  project: <ProjectList />,
-  clients: <ClientList />,
-  role: <RoleList />,
-  status: <StatusList />,
-  profile: <Profile />,
-  inventory: <InventoryLayout />,
-  reports: <ReportsLayout/>,
-  tools: <Tools/>,
-  plant: <Plants/>,
-  'project-report' : <ProjectReport />
+  'po': <PurchaseOrder />,
+  'supplier': <Suppliers />,
+  'projects': <ProjectAndClientsLayout />,
+  'project': <ProjectList />,
+  'clients': <ClientList />,
+  'role': <RoleList />,
+  'status': <StatusList />,
+  'profile': <Profile />,
+  'inventory': <InventoryLayout />,
+  'reports': <ReportsLayout/>,
+  'tools': <Tools/>,
+  'plant': <Plants/>,
+  'project-report' : <ProjectReport />,
+  'documents': <DocumentsLayout />,
+  'bsr': <Bsr/>
   // clients: <ClientList/>
 }
 
 const DashBoard = () => {
   const {domin, subdomin} = useParams()
   const url = (typeof domin == 'undefined')? 'onloding' : domin
+  
   return (
     <div className="row">
       <div className="col">
