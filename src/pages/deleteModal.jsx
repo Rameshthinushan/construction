@@ -1,7 +1,6 @@
 import { Modal } from "react-bootstrap";
 
 export const DeleteModal = ({show, handleClose, modalData, action}) => {
-  console.log(modalData);
   return (
     <Modal 
       show={show} 
@@ -10,30 +9,47 @@ export const DeleteModal = ({show, handleClose, modalData, action}) => {
       keyboard={false}
       centered
       className="rounded-0"
+      size="sm"
     >
       <Modal.Body>
         <div className="row">
           <div className="col">
             <div className="row mb-2">
-              <div className="col">
-                <h4>{modalData.title}</h4>
-              </div>
-            </div>
-            <div className="row mb-3">
-              <div className="col">
-                <div className="fs-5 fw-medium mb-2">{modalData.body}</div>
-                {modalData.description && <div className="nav-font-color">{modalData.description}</div>}
+              <div className="col text-end">
+                <button 
+                  className="btn"
+                  onClick={() => handleClose()}
+                >
+                  <i className="bi bi-x-lg"></i>
+                </button>
               </div>
             </div>
             <div className="row">
-              <div className="col text-end">
+              <div className="col text-center">
+                <img
+                  src="/assets/site-images/warning.png" 
+                  alt="delete" 
+                  height={80}
+                />
+              </div>
+            </div>
+            <div className="row mb-3">
+              <div className="col text-center">
+                <div className="fs-5 fw-medium mb-2">{modalData.body}</div>
+                {modalData.description && <div className="nav-font-color small">{modalData.description}</div>}
+              </div>
+            </div>
+            <div className="row">
+              <div className="col">
                 <button 
-                  className="btn btn-sm btn-danger me-2 w-25"
+                  className="btn btn-sm btn-outline-danger w-100"
                   onClick={action(modalData.id)}
                   type="button"
                 >Delete</button>
+              </div>
+              <div className="col">
                 <button 
-                  className="btn btn-sm btn-secondary w-25"
+                  className="btn btn-sm btn-outline-secondary w-100"
                   onClick={() => handleClose()}
                 >Calcel</button>
               </div>

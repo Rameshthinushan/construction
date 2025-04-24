@@ -61,7 +61,6 @@ const CreateToolsModal = ({ show, handleClose, unitsData, toolid }) => {
       unit: unit,
       rate: updateTool.rates[unit]
     });
-    console.log(formData);
   }, [toolid, show]);
 
   
@@ -152,7 +151,6 @@ const CreateToolsModal = ({ show, handleClose, unitsData, toolid }) => {
 
               <div className="row mb-3">
                 <div className="col">
-                  {console.log(formData.unit)}
                 <Select
                   options={options}
                   value={options.find((opt) => opt.value === formData.unit) || null}
