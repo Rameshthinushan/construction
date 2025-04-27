@@ -23,6 +23,7 @@ import Plants from '../inventory/plant/plant'
 import ProjectReport from '../reports/projectReport'
 import DocumentsLayout from '../documents/documentsLayout'
 import Bsr from '../documents/bsr/bsr'
+import MesurementList from '../settings/mesurement/mesurementList'
 
 const components = {
   'overview': <Overview />,
@@ -43,7 +44,8 @@ const components = {
   'plant': <Plants/>,
   'project-report' : <ProjectReport />,
   'documents': <DocumentsLayout />,
-  'bsr': <Bsr/>
+  'bsr': <Bsr/>,
+  'mesurement': <MesurementList/>,
   // clients: <ClientList/>
 }
 
@@ -159,7 +161,7 @@ const ListItemsDeskTop = ({url}) => {
                   }
                 >
                   <Link to={i.to} className="nav-font-color">
-                    <span className={`${(i.slug?.includes(url))? `active` : ''} nav-list-item`}>
+                    <span className={`${(i.slug?.includes(url))? `side-nav-active` : ''} nav-list-item`}>
                       <i className={`bi ${i.icon} fs-5`}></i>
                     </span>
                   </Link>

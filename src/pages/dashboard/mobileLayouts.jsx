@@ -69,7 +69,7 @@ const MobileNavigation = ({url}) => {
                       }
                     >
                       <Link to={i.to} className="nav-font-color">
-                        <span className={`${(i.slug?.includes(url))? `active` : ''} nav-list-item`}>
+                        <span className={`${(i.slug?.includes(url))? `side-nav-active` : ''} nav-list-item`}>
                           <i className={`bi ${i.icon} fs-5`}></i>
                         </span>
                       </Link>
