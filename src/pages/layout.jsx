@@ -33,12 +33,12 @@ const Layout = () => {
 
 const LoadingTemplate = ({ error }) => {
   return (
-    <div class="d-flex justify-content-center align-items-center vh-100">
-      <div class="spinner-border" role="status">
-        <span class="visually-hidden">Loading...</span>
+    <div className="d-flex justify-content-center align-items-center vh-100">
+      <div className="spinner-border">
+        <span className="visually-hidden">Loading...</span>
       </div>
       {error && (
-        <div class="ms-2">
+        <div className="ms-2">
           <div className="text-danger">
             {error}
           </div>
